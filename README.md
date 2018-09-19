@@ -1,9 +1,10 @@
 # CostCoach
 
-A web application that calculates out-of-pocket treatment costs for cancer patients.\\
+A web application that calculates out-of-pocket treatment costs for cancer patients.<br/>
 
-CS 408 project documents (e.g. executive summary) can be found in the "project_docs" directory.\\
+CS 408 project documents (e.g. executive summary) can be found in the "project_docs" directory.<br/>
 
 ## Notes
 
-This project uses Vue Material, which was in beta at the time of CostCoach's production. The documentation claims that the API will not change, but this should be noted nonetheless.
+To set up the repository locally, you must first install Node.js.<br/>
+**Mac users** must install XCode and Homebrew before trying to install Node. Instructions can be found [here](http://blog.teamtreehouse.com/install-node-js-npm-mac)<br/>
