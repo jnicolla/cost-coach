@@ -17,3 +17,6 @@ In the **server** terminal, initialize a Python virtual environment. This is don
 <br/>
 Open up a browser and navigate to "[localhost:8080](localhost:8080)". You are ready to begin developing.<br/>
 **Note** You must activate the Python virtual environment each time you want to run the server (i.e. use "py app.py"). To do this, execute the command "source env/Scripts/activate". You must also run "nodemon" to be able to see the website.
+
+Update Check - 9/30/18
+
