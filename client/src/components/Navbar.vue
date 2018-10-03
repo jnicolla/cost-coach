@@ -4,6 +4,7 @@
         <md-tab id="tab-home" md-label="Home" to="/"></md-tab>
         <md-tab id="tab-guide" md-label="Guide" to="/guide"></md-tab>
         <md-tab id="tab-about" md-label="About" to="/about"></md-tab>
+        <md-tab id="tab-timeline" md-label="Timeline" to="/timeline"></md-tab>
         </md-tabs>
     </div>
 </template>
