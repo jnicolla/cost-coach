@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Guide from '@/components/Guide'
 import About from '@/components/About'
+import Timeline from '@/components/Timeline'
+import LightTimeline from 'vue-light-timeline'
+Vue.use(LightTimeline)
 
 Vue.use(Router)
 
@@ -22,6 +25,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/timeline',
+      name: 'Timeline',
+      component: Timeline 
     }
   ]
 })

@@ -19,5 +19,9 @@
 export default {
     name: "About"
 }
+<<<<<<< HEAD
 </script>
 
+=======
+</script>
+>>>>>>> 97f14d99ba3a302c40c55e6473b04bb3bb9bf8ff
