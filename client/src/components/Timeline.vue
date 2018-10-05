@@ -3,8 +3,8 @@
 <template>
  <div>
    <center> <font color="blue"> <h1 class="md-display-3">Your Timeline</h1></font></center>
-  <center><md-content class="md-accent"><h1 class="md-title">Total Treatment Cost:<br /><br />$8,500</h1></md-content>  <md-content class="md-primary"><h1 class="md-title">Cost Before OOP:<br /><br />$4,700</h1></md-content>  <md-content class="md-accent"><h1 class="md-title">OOP Reached Date:<br /><br />March 9th, 2019</h1></md-content> </center>
-  <light-timeline :items='items'></light-timeline>
+   <center><md-content class="md-accent"><h1 class="md-title">Total Treatment Cost:<br /><br />$8,500</h1></md-content>  <md-content class="md-primary"><h1 class="md-title">Cost Before OOP:<br /><br />$4,700</h1></md-content>  <md-content class="md-accent"><h1 class="md-title">OOP Reached Date:<br /><br />March 9th, 2019</h1></md-content> </center>
+   <light-timeline :items='items'></light-timeline>
 
 
     </div>
