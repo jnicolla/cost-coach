@@ -12,6 +12,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/about',
+      name: 'About',
+      component: About
+    },
+    {
       path: '/',
       name: 'Home',
       component: Home
@@ -21,11 +26,7 @@ export default new Router({
       name: 'Guide',
       component: Guide
     },
-    {
-      path: '/about',
-      name: 'About',
-      component: About
-    },
+    
     {
       path: '/timeline',
       name: 'Timeline',
