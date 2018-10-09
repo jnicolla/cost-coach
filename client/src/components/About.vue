@@ -1,6 +1,5 @@
 <template>
     <div>
-       
     <center> <h1 class="md-display-3">Welcome to CostCoach</h1></center>
     
     
@@ -26,11 +25,11 @@
                             <li>In the Guide page we provide information to try to help you have this conversation with your medical provider.<br /></li>
                         
                         
+
                 
             </md-content>
             </center>
             
-        
         </div>
     </div>
 
