@@ -1,6 +1,6 @@
 <template>
 <div>
-    <center> <h1 class="md-display-3">Conversation Guideline</h1></center><center> <font color="md-accent">Below are common questions that a patient can ask their doctor or FCC to better understand their treatment cost.</font></center>
+    <center> <h1 class="md-display-3">Conversation Guideline</h1></center><center> <font color="black">Below are common questions that a patient can ask their doctor or FCC to better understand their treatment cost.</font></center>
  <center> <font color="white">.</font></center>
  <center> <font color="white">.</font></center>
  <center> <font color="white">.</font></center>
@@ -10,7 +10,30 @@
   <VueFaqAccordion 
     :items="myItems"
   />
-</div>
+
+  
+
+    <div class="phone-viewport">
+      <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ 
+ <md-bottom-bar class="md-primary" md-type="shift">
+  <center><font color="white">CostCoach © 2018</font></center>
+
+ <md-bottom-bar-item id="" md-label="" md-icon=""></md-bottom-bar-item> 
+
+
+                                                          
+                                           
+
+      </md-bottom-bar>
+    </div>
+  </div>
+
 </template>
  
 <script>

@@ -6,7 +6,25 @@
    <center><md-content class="md-primary"><h1 class="md-title">Total Treatment Cost:<br /><br />$8,500</h1></md-content>  <md-content class="md-primary"><h1 class="md-title">Cost Before OOP:<br /><br />$4,700</h1></md-content>  <md-content class="md-primary"><h1 class="md-title">OOP Reached Date:<br /><br />October 12th, 2018</h1></md-content> </center>
    <light-timeline :items='items'></light-timeline>
 
+<div class="phone-viewport">
+      <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ 
+ <md-bottom-bar class="md-primary" md-type="shift">
+  <center><font color="white">CostCoach © 2018</font></center>
 
+ <md-bottom-bar-item id="" md-label="" md-icon=""></md-bottom-bar-item> 
+
+
+                                                          
+                                           
+
+      </md-bottom-bar>
+    </div>
     </div>
 
 
@@ -23,7 +41,6 @@
     justify-content: center;
     align-items: center;
   }
-  
 </style>
 
 <script>

@@ -31,6 +31,25 @@
             </center>
             
         </div>
+        <div class="phone-viewport">
+      <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ 
+ <md-bottom-bar class="md-primary" md-type="shift">
+  <center><font color="white">CostCoach © 2018</font></center>
+
+ <md-bottom-bar-item id="" md-label="" md-icon=""></md-bottom-bar-item> 
+
+
+                                                          
+                                           
+
+      </md-bottom-bar>
+    </div>
     </div>
 
     
