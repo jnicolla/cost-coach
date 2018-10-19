@@ -49,7 +49,7 @@
                 </div>
             </md-step>
             <md-step id="fourth" md-label="Cost">
-                Hello, cost!
+                Process Complete. Timeline Page is now Viewable
             </md-step>
         </md-steppers>
         

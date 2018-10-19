@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Guide from '@/components/Guide'
 import About from '@/components/About'
 import Timeline from '@/components/Timeline'
+import Disclaimer from '@/components/Disclaimer'
 import LightTimeline from 'vue-light-timeline'
 Vue.use(LightTimeline)
 
@@ -31,6 +32,13 @@ export default new Router({
       path: '/timeline',
       name: 'Timeline',
       component: Timeline 
-    }
+    },
+    {
+    path: '/Disclaimer',
+    name: 'Disclaimer',
+    component: Disclaimer  
+  }
+
+
   ]
 })

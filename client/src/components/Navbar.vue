@@ -7,6 +7,7 @@
         <md-tab id="tab-home" md-label="Cost Calculator" to="/"></md-tab>
         <md-tab id="tab-timeline" md-label="Timeline" to="/timeline"></md-tab>
          <md-tab id="tab-guide" md-label="Guide" to="/guide"></md-tab>
+         <md-tab id="tab-Disclaimer" md-label="Disclaimer" to="/Disclaimer"></md-tab>
         </md-tabs>
     </div>
 </template>
