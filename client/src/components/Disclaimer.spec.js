@@ -2,7 +2,7 @@ import {mount} from '@vue/test-utils'
 import Disclaimer from './Disclaimer.vue'
 describe ('Disclaimer.vue',()=>
 {
-    it('is third', () => 
+    it('Checks to see if Discalimer text is here', () => 
     {
        // expect (true).toBe(true)
         const wrapper = mount(Disclaimer)
@@ -14,3 +14,7 @@ describe ('Disclaimer.vue',()=>
 
     })
 })
+
+//Given (User is on the webpage)
+// When (They try to go on the disclaimer page)
+// Then (They should see the disclaimer Message)
