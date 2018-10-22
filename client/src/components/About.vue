@@ -1,6 +1,5 @@
 <template>
     <div>
-       
     <center> <h1 class="md-display-3">Welcome to CostCoach</h1></center>
     
     
@@ -26,12 +25,31 @@
                             <li>In the Guide page we provide information to try to help you have this conversation with your medical provider.<br /></li>
                         
                         
+
                 
             </md-content>
             </center>
             
-        
         </div>
+        <div class="phone-viewport">
+      <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ 
+ <md-bottom-bar class="md-primary" md-type="shift">
+  <center><font color="white">CostCoach © 2018</font></center>
+
+ <md-bottom-bar-item id="" md-label="" md-icon=""></md-bottom-bar-item> 
+
+
+                                                          
+                                           
+
+      </md-bottom-bar>
+    </div>
     </div>
 
     
