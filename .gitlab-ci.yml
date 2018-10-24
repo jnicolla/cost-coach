@@ -1,12 +1,15 @@
-image: node:6.11.3
+image: node:10.6.0
 
-pages:
-  stage: deploy
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+build site:
+  stage: build
   script:
- rm -rf node_modules
- -npm install
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+    - npm install --progress=false
+    - npm run dev
