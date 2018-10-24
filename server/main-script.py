@@ -69,9 +69,9 @@ if __name__ == '__main__':
     pathwaysFileList = tempPathwaysFileList[1:]
     planDict = planDict(insuranceFileList)
     scenDict = scenarioDict(pathwaysFileList)
-    print (planDict)
+       #print (planDict)
     #print planDict.items()
-    print (scenDict)
+       #print (scenDict)
     #print scenDict.items()
     #for plan,numTup in planDict.items():
         #print numTup[1]
@@ -81,6 +81,6 @@ if __name__ == '__main__':
     #for ele in planDict.items():
         #print ele
     dict = insuranceFunc(planDict, scenDict)
-    print (dict)
+     #print (dict)
     writeGenericFile(dict)
     writeFinalFile(dict)
