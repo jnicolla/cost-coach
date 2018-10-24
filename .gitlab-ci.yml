@@ -3,7 +3,7 @@ image: node:6.11.3
 pages:
   stage: deploy
   script:
- -rf node_modules
+ rm -rf node_modules
  -npm install
   artifacts:
     paths:
