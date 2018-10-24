@@ -11,5 +11,6 @@ cache:
 build site:
   stage: build
   script:
+    - cd client
     - npm install --progress=false
     - npm run unit
