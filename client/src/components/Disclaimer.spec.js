@@ -6,7 +6,7 @@ describe ('Disclaimer.vue',()=>
     {
        // expect (true).toBe(true)
         const wrapper = mount(Disclaimer)
-        expect (wrapper.text()).toBe('Disclaimer Text: This is not a medically certified App')
+        expect (wrapper.text()).toBe('Disclaimer Text: This is not a medically certified App. All the numebrs provided on this webpage are estimates')
         
 
 
