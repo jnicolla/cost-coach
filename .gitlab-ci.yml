@@ -5,7 +5,7 @@ pages:
   script:
   - npm install -g yarn
   - yarn install
-  - npm run build:demo
+  - yarn test
   artifacts:
     paths:
     - public
