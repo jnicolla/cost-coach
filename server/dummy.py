@@ -3,8 +3,6 @@ import csv
 from prettytable import PrettyTable
 
 def dummy_calc(insurance, out_of_pocket, copay, diagnosis, medications):
-    # print ("line_count")
-    # filename = 'Final Plans for Scenerio Prostate IV 150'
     
      plan = ''
      if insurance == 'Duke Select':
@@ -39,11 +37,19 @@ def dummy_calc(insurance, out_of_pocket, copay, diagnosis, medications):
              else:
                  line_count += 1
              
-     print (f'Processed {line_count} lines.')
+     #print (f'Processed {line_count} lines.')
      html_code = x.get_html_string()
      html_file = open('table.html', 'w')
      html_file = html_file.write(html_code)
-     #return insurance + out_of_pocket + copay + diagnosis + ' '.join(medications) 
+     sentence =''
+     with open('Final Plans for Scenario Prostate IV 150.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        
+        line_count = 0
+        
+        for row in csv_reader:
+            if row[0] == plan:
+                sentence =f'For the insurance plan \t{insurance} \t{row[0]} and the metal level {row[1]}, the out of pocket maximum will be reached after {row[5]} number of claims and {row[6]} visits, at the catagory {row[7]}.'
+     return [html_code, sentence]
 
-if __name__=='__main__':
-    dummy_calc('Duke Select', 6000, 30, "oral", "Med a")
+ 

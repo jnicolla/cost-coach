@@ -10,9 +10,12 @@ CORS(app)
 @app.route('/calculate', methods=['POST'])
 def calculate():
     answers = request.get_json()
-    cost = dummy_calc(answers.get('insurance'),answers.get('outOfPocket'),answers.get('copay'),answers.get('diagnosis'),answers.get('medications'))
-    response = {'cost':cost}
+    res = dummy_calc(answers.get('insurance'),answers.get('outOfPocket'),answers.get('copay'),answers.get('diagnosis'),answers.get('medications'))
+    #cost = dummy_cost(answers.get('insurance'),answers.get('outOfPocket'),answers.get('copay'),answers.get('diagnosis'),answers.get('medications'))
+    response = { 'html':res[0], 'cost':res[1]}
+
     return jsonify(response)
+
 
 if __name__=='__main__':
     app.run()
