@@ -49,7 +49,8 @@
                 </div>
             </md-step>
             <md-step id="fourth" md-label="Cost">
-                Process Complete. Timeline Page is now Viewable
+                <p><strong>{{totalCost}}</strong></p>
+                <div v-html="table"></div>
             </md-step>
         </md-steppers>
         
@@ -79,8 +80,9 @@ export default {
             diagnosis: false,
             medications: false
         },
-        totalCost: null,
-        loading: true
+        totalCost: '',
+        loading: true,
+        table: ''
     }),
 
     computed: {
@@ -101,6 +103,7 @@ export default {
             axios.post(path, this.input).then((res) => {
                 this.loading = false;
                 this.totalCost = res.data.cost;
+                this.table = res.data.html;
                 console.log(this.totalCost);
             }).catch((error) => {
                 console.log(error)
