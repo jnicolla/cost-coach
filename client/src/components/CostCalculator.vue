@@ -59,6 +59,49 @@
             </v-stepper-content>
         </v-stepper-items>
   </v-stepper>
+  <template>
+  <div class="text-xs-center">
+    <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      <v-btn
+        slot="activator"
+        color="red lighten-2"
+        dark
+      >
+        What is this? Click here to learn more
+      </v-btn>
+
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          What is the cost calculator?
+        </v-card-title>
+
+        <v-card-text>
+          This is the cost calculator. Please answer every question in this survey.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            flat
+            @click="dialog = false"
+          >
+            Ok, got it!
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
+</template>
+
     </v-content>
   </v-app>
 </div>
@@ -70,6 +113,9 @@
   export default 
 {
   data: () => ({
+
+      dialog: false,
+     
                 stepper: 0,
             steps: [
                 {
@@ -97,7 +143,10 @@
      dropdown_icon3: [
       { text: 'Abiraterone', callback: () => console.log('Abiraterone') },
       { text: 'Docetaxel', callback: () => console.log('Docetaxel') }
-     ]
-  })
+     ],
+   
+  }),
+   
 }
+
 </script>

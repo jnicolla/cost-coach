@@ -1,10 +1,53 @@
 <template>
+
+
   <v-timeline>
+     <div class="text-xs-left">
+    <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      <v-btn
+        slot="activator"
+        color="red lighten-2"
+        dark
+      >
+        What is this? Click me to learn more
+      </v-btn>
+
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          What does this timeline show?
+        </v-card-title>
+
+        <v-card-text>
+          This provides an estimate of your expected cost per each visit. It is a timeline of you visits until you reach your out of pocket maximum.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            flat
+            @click="dialog = false"
+          >
+            Ok, got it!
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
     <v-timeline-item
       color="#232859"
       fill-dot
       right
     >
+    
       <v-card>
         <v-card-title class="purple lighten-2">
           <v-icon
@@ -19,7 +62,7 @@
         <v-container>
           <v-layout>
             <v-flex xs10>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+              $100
             </v-flex>
             <v-flex xs2>
               <v-icon size="64">mdi-calendar-text</v-icon>
@@ -46,10 +89,10 @@
         <v-container>
           <v-layout>
             <v-flex xs8>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+              $35
             </v-flex>
             <v-flex xs4>
-              Lorem ipsum dolor sit amet, no nam oblique veritus.
+              Medication
             </v-flex>
           </v-layout>
         </v-container>
@@ -79,7 +122,7 @@
               :key="n"
               xs4
             >
-              Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.
+              $400
             </v-flex>
           </v-layout>
         </v-container>
@@ -108,7 +151,7 @@
               <v-icon size="64">mdi-server-network</v-icon>
             </v-flex>
             <v-flex xs10>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus.
+               $300
             </v-flex>
           </v-layout>
         </v-container>
@@ -134,7 +177,7 @@
         <v-container>
           <v-layout>
             <v-flex>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+              $25
             </v-flex>
           </v-layout>
         </v-container>
@@ -143,5 +186,15 @@
   </v-timeline>
 </template>
 
+
 <script>
+
+export default 
+{
+  data: () => ({
+ 
+ 
+        dialog: false
+}),
+}
 </script>
