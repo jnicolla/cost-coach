@@ -1,7 +1,7 @@
 <template>
   <v-toolbar color = "#d65f36" dark>
    
-    <v-toolbar-title>Cost Coach</v-toolbar-title>
+    <v-toolbar-title>CostCoach</v-toolbar-title>
     <v-spacer></v-spacer>
     <div class="hidden-sm-and-down">
      
