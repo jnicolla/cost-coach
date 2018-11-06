@@ -9,7 +9,7 @@
     >
       <v-btn
         slot="activator"
-        color="red lighten-2"
+        color="#232859"
         dark
       >
         What is this? Click me to learn more
@@ -42,6 +42,8 @@
       </v-card>
     </v-dialog>
   </div>
+  
+
     <v-timeline-item
       color="#232859"
       fill-dot

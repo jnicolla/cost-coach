@@ -9,7 +9,7 @@
     >
       <v-btn
         slot="activator"
-        color="red lighten-2"
+        color="#232859"
         dark
       >
         How do I use this? Click me to learn more

@@ -50,7 +50,6 @@
             segmented
             color = "#232859"
           ></v-overflow-btn>
-              ––>  <v-card color="#232859" class="mb-5" height="200px"></v-card>
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn flat @click.native="stepper = 2">Back</v-btn>
@@ -67,10 +66,10 @@
     >
       <v-btn
         slot="activator"
-        color="red lighten-2"
+        color="#232859"
         dark
       >
-        What is this? Click here to learn more
+        What is this? Click Me to learn more
       </v-btn>
 
       <v-card>

@@ -29,26 +29,27 @@
 
 
 <script>
-import ima from '@/assets/WTC_1.png'
-import ima2 from '@/assets/WTC_2.png'
-import ima3 from '@/assets/WTC3.png'
+import image1 from '@/assets/WTC1.png'
+import image2 from '@/assets/WTC2.png'
+import image3 from '@/assets/WTC3_v1.png'
+import image4 from '@/assets/WTC4.png'
 
   export default {
     data () {
       return {
         items: [
           {
-            src: ima
+            src: image1
             
           },
           {
-            src: ima2
+            src: image2
           },
           {
-            src: ima3
+            src: image3
           },
           {
-            src: ima3
+            src: image4
           }
         ]
       }
