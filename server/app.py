@@ -10,6 +10,8 @@ CORS(app)
 @app.route('/calculate', methods=['POST'])
 def calculate():
     answers = request.get_json()
+    json = { letter:'a' }
+    SELECT FROM Words WHERE word[0] = json.get('letter')
     cost = dummy_calc(answers.get('insurance'),answers.get('outOfPocket'),answers.get('copay'),answers.get('diagnosis'),answers.get('medications'))
     response = {'cost':cost}
     return jsonify(response)
