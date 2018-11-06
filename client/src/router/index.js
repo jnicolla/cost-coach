@@ -1,36 +1,46 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Guide from '@/components/Guide'
-import About from '@/components/About'
 import Timeline from '@/components/Timeline'
-import LightTimeline from 'vue-light-timeline'
-Vue.use(LightTimeline)
+import CostCalculator from '@/components/CostCalculator'
+import Disclaimer from '@/components/Disclaimer'
+import Guide from '@/components/Guide'
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/about',
-      name: 'About',
-      component: About
-    },
-    {
       path: '/',
       name: 'Home',
       component: Home
     },
     {
-      path: '/guide',
+      path: '/Home',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/Timeline',
+      name: 'Timeline',
+      component: Timeline
+    },
+    {
+      path: '/CostCalculator',
+      name: 'CostCalculator',
+      component: CostCalculator
+    },
+    {
+      path: '/Disclaimer',
+      name: 'Disclaimer',
+      component: Disclaimer
+    }, 
+    {
+      path: '/Guide',
       name: 'Guide',
       component: Guide
-    },
-    
-    {
-      path: '/timeline',
-      name: 'Timeline',
-      component: Timeline 
     }
+
   ]
 })

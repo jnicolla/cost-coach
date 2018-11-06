@@ -20,3 +20,10 @@ Open up a browser and navigate to "[localhost:8080](localhost:8080)". You are re
 
 Update Check - 9/30/18
 
+
+**Testing Update:**
+<br/>
+Testing Plan has been implemented for one page's specific components so far, the Dislclaimer Page. Currently runs two tests that checks for button functionality and text display. Testing plan has been implemented for three pages total (Home, About, and Disclaimer Page), checks to make sure these pages appear/logically sound. 
+</br>
+
+<Rep Demo>

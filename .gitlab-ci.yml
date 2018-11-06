@@ -1,0 +1,16 @@
+image: node:10.6.0
+
+stages:
+  - build
+ 
+
+cache:
+  paths:
+    - node_modules/
+
+build site:
+  stage: build
+  script:
+    - cd client
+    - npm install --progress=false
+    - npm run unit

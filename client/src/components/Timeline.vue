@@ -1,130 +1,202 @@
-
-
 <template>
- <div>
-   <center> <font color="blue"> <h1 class="md-display-3">Your Timeline</h1></font></center>
-   <center><md-content class="md-primary"><h1 class="md-title">Total Treatment Cost:<br /><br />$8,500</h1></md-content>  <md-content class="md-primary"><h1 class="md-title">Cost Before OOP:<br /><br />$4,700</h1></md-content>  <md-content class="md-primary"><h1 class="md-title">OOP Reached Date:<br /><br />October 12th, 2018</h1></md-content> </center>
-   <light-timeline :items='items'></light-timeline>
-
-<div class="phone-viewport">
-      <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
- 
- <md-bottom-bar class="md-primary" md-type="shift">
-  <center><font color="white">CostCoach © 2018</font></center>
-
- <md-bottom-bar-item id="" md-label="" md-icon=""></md-bottom-bar-item> 
 
 
-                                                          
-                                           
+  <v-timeline>
+     <div class="text-xs-left">
+    <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      <v-btn
+        slot="activator"
+        color="#232859"
+        dark
+      >
+        What is this? Click me to learn more
+      </v-btn>
 
-      </md-bottom-bar>
-    </div>
-    </div>
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          What does this timeline show?
+        </v-card-title>
 
+        <v-card-text>
+          This provides an estimate of your expected cost per each visit. It is a timeline of you visits until you reach your out of pocket maximum.
+        </v-card-text>
 
+        <v-divider></v-divider>
 
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            flat
+            @click="dialog = false"
+          >
+            Ok, got it!
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
+  
+
+    <v-timeline-item
+      color="#232859"
+      fill-dot
+      right
+    >
+    
+      <v-card>
+        <v-card-title class="purple lighten-2">
+          <v-icon
+            dark
+            size="42"
+            class="mr-3"
+          >
+            mdi-magnify
+          </v-icon>
+          <h2 class="display-1 white--text font-weight-light">Visit 1: Doctor Consultation</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex xs10>
+              $100
+            </v-flex>
+            <v-flex xs2>
+              <v-icon size="64">mdi-calendar-text</v-icon>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item
+      color="amber lighten-1"
+      fill-dot
+      left
+      small
+    >
+      <v-card>
+        <v-card-title class="amber lighten-1 justify-end">
+          <h2 class="display-1 mr-3 white--text font-weight-light">Visit 2: Chemotherapy Session</h2>
+          <v-icon
+            dark
+            size="42"
+          >mdi-home-outline</v-icon>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex xs8>
+              $35
+            </v-flex>
+            <v-flex xs4>
+              Medication
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item
+      color="cyan lighten-1"
+      fill-dot
+      right
+    >
+      <v-card>
+        <v-card-title class="cyan lighten-1">
+          <v-icon
+            class="mr-3"
+            dark
+            size="42"
+          >
+            mdi-email-outline
+          </v-icon>
+          <h2 class="display-1 white--text font-weight-light">Doctor Visit</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex
+              v-for="n in 3"
+              :key="n"
+              xs4
+            >
+              $400
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item
+      color="red lighten-1"
+      fill-dot
+      left
+      small
+    >
+      <v-card>
+        <v-card-title class="red lighten-1 justify-end">
+          <h2 class="display-1 mr-3 white--text font-weight-light">Chemotherapy Session</h2>
+          <v-icon
+            dark
+            size="42"
+          >
+            mdi-account-multiple-outline
+          </v-icon>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex xs2>
+              <v-icon size="64">mdi-server-network</v-icon>
+            </v-flex>
+            <v-flex xs10>
+               $300
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item
+      color="green lighten-1"
+      fill-dot
+      right
+    >
+      <v-card>
+        <v-card-title class="green lighten-1">
+          <v-icon
+            class="mr-3"
+            dark
+            size="42"
+          >
+            mdi-phone-in-talk
+          </v-icon>
+          <h2 class="display-1 white--text font-weight-light">Pharmacy Visit</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex>
+              $25
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
+  </v-timeline>
 </template>
 
-<style lang="scss" scoped>
-
-  .md-content 
-  {
-    width: 250px;
-    height: 150px;
-     display: inline-block;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
 
 <script>
-const theme = 'blue';
-export default {
-  data () {
-    return {
-      items: [
-        {
-          tag: '2018-09-27',
-          color: '#1baae6',
-          content: 'Visit 1: Docotor Visit   - $50'
-        },
-        {
-          tag: '2018-10-12',
-          type: 'circle', 
-          color: '#1baae6',
-          content: 'Visit 2: Chemotherapy Session -$150'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#1baae6', 
-          htmlMode: true,
-          content: `Visit 3: Routine Check-up - $75`
-        },
-        {
-          tag: '2018-09-27',
-          color: '#1baae6',
-          content: 'Visit 4: Docotor Visit - $75'
-        },
-        {
-          tag: '2018-10-12',
-          type: 'circle', 
-          color: '#1baae6',
-          content: 'Visit 5: Chemotherapy Session - $175'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#1baae6', 
-          htmlMode: true,
-          content: `Visit 6: Routine Check-up - $275`
-        },
-        {
-          tag: '2018-09-27',
-          color: '#1baae6',
-          content: 'Visit 7: Docotor Visit - $25'
-        },
-        {
-          tag: '2018-10-12',
-          color: '#093af1',
-          type: 'star',
-          content: 'Visit 8: Chemotherapy Session - $475'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#1baae6', 
-          htmlMode: true,
-          content: `Visit 9: Routine Check-up - $15`
-        },
-        {
-          tag: '2018-09-27',
-          color: '#1baae6',
-          content: 'Visit 10: Docotor Visit - $45'
-        },
-        {
-          tag: '2018-10-12',
-          type: 'circle', 
-          color: '#1baae6',
-          content: 'Visit 11: Chemotherapy Session - $175'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#1baae6', 
-          htmlMode: true,
-          content: `Visit 12: Routine Check-up - $75`
-        }
-      ]
-    }
-  }
-}
-  
-</script>
 
+export default 
+{
+  data: () => ({
+ 
+ 
+        dialog: false
+}),
+}
+</script>
