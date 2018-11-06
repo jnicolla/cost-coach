@@ -1,31 +1,40 @@
 <template>
   <div id="app">
+
     <Navbar></Navbar>
-    <router-view/>
+
+      <router-view/>
+
+    <Footer></Footer>
+
   </div>
 </template>
 
 <script>
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 
-export default {
-  name: 'App',
-  components: 
-  {
-    Navbar
-  }
+export default 
+{
+  name: 'App', 
+  components: {Footer,Navbar}
 }
 </script>
 
 
-<style <style lang="scss">
-@import "~vue-material/dist/theme/engine"; // Import the theme engine
 
-@include md-register-theme("default", (
- primary: #d65f36, // The primary color of your brand
-  accent: #232859 // The secondary color of your brand
-));
 
-@import "~vue-material/dist/theme/all"; // Apply the theme
+
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #1979da;
+}
+a {
+ text-decoration: none;
+}
 </style>
-

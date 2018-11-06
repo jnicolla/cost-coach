@@ -1,23 +1,20 @@
 <template>
 <div>
-    <center> <h1 class="md-display-4">Disclaimer Text: This is not a medically certified App. All the numebrs provided on this webpage are estimates </h1></center>
-                  <div id="More_Info">
-                   <center> <md-button class="md-raised md-primary">Read More</md-button></center>
-                   </div>
-    </div>
- </template>
-    
+  <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
 
+  <v-jumbotron color="#232859"
+  dark
+  > 
+    <v-container fill-height>
+      <v-layout align-center>
+        <v-flex text-xs-center>
+          <h3 class="display-3">Disclaimer Text goes here</h3>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-jumbotron>
+  </div>
+</template>
 
-
-<style <style lang="scss">
-
-</style>
-
-<script>
-
-export default {
-    
-    name: "Disclaimer"
-}
-</script>

@@ -1,129 +1,147 @@
-
-
 <template>
- <div>
-   <center> <font color="blue"> <h1 class="md-display-3">Your Timeline</h1></font></center>
-   <center><md-content class="md-accent"><h1 class="md-title">Total Treatment Cost:<br /><br />$8,500</h1></md-content>  <md-content class="md-primary"><h1 class="md-title">Cost Before OOP:<br /><br />$4,700</h1></md-content>  <md-content class="md-accent"><h1 class="md-title">OOP Reached Date:<br /><br />October 12th, 2018</h1></md-content> </center>
-   <light-timeline :items='items'></light-timeline>
+  <v-timeline>
+    <v-timeline-item
+      color="#232859"
+      fill-dot
+      right
+    >
+      <v-card>
+        <v-card-title class="purple lighten-2">
+          <v-icon
+            dark
+            size="42"
+            class="mr-3"
+          >
+            mdi-magnify
+          </v-icon>
+          <h2 class="display-1 white--text font-weight-light">Visit 1: Doctor Consultation</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex xs10>
+              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+            </v-flex>
+            <v-flex xs2>
+              <v-icon size="64">mdi-calendar-text</v-icon>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
-<div class="phone-viewport">
-      <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
- <center> <font color="white">.</font></center>
+    <v-timeline-item
+      color="amber lighten-1"
+      fill-dot
+      left
+      small
+    >
+      <v-card>
+        <v-card-title class="amber lighten-1 justify-end">
+          <h2 class="display-1 mr-3 white--text font-weight-light">Visit 2: Chemotherapy Session</h2>
+          <v-icon
+            dark
+            size="42"
+          >mdi-home-outline</v-icon>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex xs8>
+              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+            </v-flex>
+            <v-flex xs4>
+              Lorem ipsum dolor sit amet, no nam oblique veritus.
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
- 
- <md-bottom-bar class="md-primary" md-type="shift">
-  <center><font color="white">CostCoach © 2018</font></center>
+    <v-timeline-item
+      color="cyan lighten-1"
+      fill-dot
+      right
+    >
+      <v-card>
+        <v-card-title class="cyan lighten-1">
+          <v-icon
+            class="mr-3"
+            dark
+            size="42"
+          >
+            mdi-email-outline
+          </v-icon>
+          <h2 class="display-1 white--text font-weight-light">Doctor Visit</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex
+              v-for="n in 3"
+              :key="n"
+              xs4
+            >
+              Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
- <md-bottom-bar-item id="" md-label="" md-icon=""></md-bottom-bar-item> 
+    <v-timeline-item
+      color="red lighten-1"
+      fill-dot
+      left
+      small
+    >
+      <v-card>
+        <v-card-title class="red lighten-1 justify-end">
+          <h2 class="display-1 mr-3 white--text font-weight-light">Chemotherapy Session</h2>
+          <v-icon
+            dark
+            size="42"
+          >
+            mdi-account-multiple-outline
+          </v-icon>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex xs2>
+              <v-icon size="64">mdi-server-network</v-icon>
+            </v-flex>
+            <v-flex xs10>
+              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus.
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
 
-
-                                                          
-                                           
-
-      </md-bottom-bar>
-    </div>
-    </div>
-
-
-
+    <v-timeline-item
+      color="green lighten-1"
+      fill-dot
+      right
+    >
+      <v-card>
+        <v-card-title class="green lighten-1">
+          <v-icon
+            class="mr-3"
+            dark
+            size="42"
+          >
+            mdi-phone-in-talk
+          </v-icon>
+          <h2 class="display-1 white--text font-weight-light">Pharmacy Visit</h2>
+        </v-card-title>
+        <v-container>
+          <v-layout>
+            <v-flex>
+              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-timeline-item>
+  </v-timeline>
 </template>
 
-<style lang="scss" scoped>
-
-  .md-content 
-  {
-    width: 250px;
-    height: 150px;
-     display: inline-block;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
-
 <script>
-const theme = 'Orange';
-export default {
-  data () {
-    return {
-      items: [
-        {
-          tag: '2018-09-27',
-          color: '#232859',
-          content: 'Visit 1: Docotor Visit   - $50'
-        },
-        {
-          tag: '2018-10-12',
-          type: 'circle', 
-          color: '#d65f36',
-          content: 'Visit 2: Chemotherapy Session -$150'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#d65f36', 
-          htmlMode: true,
-          content: `Visit 3: Routine Check-up - $75`
-        },
-        {
-          tag: '2018-09-27',
-          color: '#d65f36',
-          content: 'Visit 4: Docotor Visit - $75'
-        },
-        {
-          tag: '2018-10-12',
-          type: 'circle', 
-          color: '#232859',
-          content: 'Visit 5: Chemotherapy Session - $175'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#232859', 
-          htmlMode: true,
-          content: `Visit 6: Routine Check-up - $275`
-        },
-        {
-          tag: '2018-09-27',
-          color: '#232859',
-          content: 'Visit 7: Docotor Visit - $25'
-        },
-        {
-          tag: '2018-10-12',
-          color: '#d65f36',
-          type: 'star',
-          content: 'Visit 8: Chemotherapy Session - $475'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#232859', 
-          htmlMode: true,
-          content: `Visit 9: Routine Check-up - $15`
-        },
-        {
-          tag: '2018-09-27',
-          color: '#232859',
-          content: 'Visit 10: Docotor Visit - $45'
-        },
-        {
-          tag: '2018-10-12',
-          type: 'circle', 
-          color: '#232859',
-          content: 'Visit 11: Chemotherapy Session - $175'
-        },
-        {
-          tag: '2018-11-15',
-          type: 'circle', 
-          color: '#232859', 
-          htmlMode: true,
-          content: `Visit 12: Routine Check-up - $75`
-        }
-      ]
-    }
-  }
-}
-  
 </script>
-

@@ -1,114 +1,57 @@
 <template>
-    <div>
-        <md-steppers md-alternative md-dynamic-height>
-            <md-step id="first" md-label="Insurance">
-                <div>
-                    <p>Insurance plan</p>
-                    <md-field>
-                        <md-select v-model="input.insurance">
-                            <md-option v-for="(plan,index) in plans" :value="plan" :key="index">
-                                {{plan}}
-                            </md-option>
-                        </md-select>
-                    </md-field>
-                </div>
 
-                <div v-if="otherQuestions">
-                    <p>Out of pocket expenses</p>
-                    <md-field>
-                        <span class="md-prefix">$</span>
-                        <md-input v-model="input.outOfPocket"></md-input>
-                    </md-field>
-                    <p>Copay</p>
-                    <md-field>
-                        <span class="md-prefix">$</span>
-                        <md-input v-model="input.copay"></md-input>
-                    </md-field>
-                </div>
+<div>
+ <v-carousel>
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+    ></v-carousel-item>
+  </v-carousel>
 
-                <!--<md-button class="md-raised md-primary" @click="cont('first','second')">Continue</md-button>-->
-            </md-step>
-            <md-step id="second" md-label="Diagnosis">
-                <div>
-                    <p>Diagnosis</p>
-                    <md-field>
-                        <md-select v-model="input.diagnosis">
-                            <md-option v-for="(diagnosis,index) in diagnosis" :value="diagnosis" :key="index">
-                                {{diagnosis}}
-                            </md-option>
-                        </md-select>
-                    </md-field>
-                </div>
-            </md-step>
-            <md-step id="third" md-label="Medications">
-                <div>
-                    <md-checkbox v-for="(med,index) in medications" v-model="input.medications" :value="med" :key="index" class="md-primary">
-                        {{med}}
-                    </md-checkbox>
-                    <md-button class="md-raised md-primary" @click="calculate()">Calculate</md-button>
-                </div>
-            </md-step>
-            <md-step id="fourth" md-label="Cost">
-                <p><strong>{{totalCost}}</strong></p>
-                <div v-html="table"></div>
-            </md-step>
-        </md-steppers>
-        
+      <v-carousel style="height: 100%">
+        <v-carousel-item v-for="(slide, i) in slides" :src="slide.src" :key="i">
+          <v-jumbotron dark>
+            <v-container fill-height>
+              <v-layout align-center>
+                <v-flex>
+                  <h3 class="display-3">{{ slide.title }}</h3>
+                  <span class="subheading">{{ slide.text }}</span>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-jumbotron>
+        </v-carousel-item>
+      </v-carousel>
     </div>
-    
 </template>
 
+
+
 <script>
-import axios from 'axios';
+import ima from '@/assets/WTC_1.png'
+import ima2 from '@/assets/WTC_2.png'
+import ima3 from '@/assets/WTC3.png'
 
-export default {
-    name: 'Home',
-
-    data: () => ({
-        plans: ['Duke Select', 'Duke Basic', 'Blue Care', 'Duke Options', 'Other'],
-        diagnosis: ['Prostate cancer', 'Lung cancer'],
-        medications: ['Medication A', 'Medication B', 'Medication C'],
-        input: {
-            insurance: null,
-            outOfPocket: null,
-            copay: null,
-            diagnosis: null,
-            medications: []
-        },
-        questions: {
-            insurance: false,
-            diagnosis: false,
-            medications: false
-        },
-        totalCost: '',
-        loading: true,
-        table: ''
-    }),
-
-    computed: {
-        otherQuestions() {
-            return this.input.insurance==='Other';
-        }
-    },
-
-    methods: {
-        cont(curr, next) {
-
-        },
-
-        calculate() {
-            this.loading = true;
-            // will want to change path based on whether in prod or dev
-            const path = 'http://localhost:5000/calculate';
-            axios.post(path, this.input).then((res) => {
-                this.loading = false;
-                this.totalCost = res.data.cost;
-                this.table = res.data.html;
-                console.log(this.totalCost);
-            }).catch((error) => {
-                console.log(error)
-            });
-        }
+  export default {
+    data () {
+      return {
+        items: [
+          {
+            src: ima
+            
+          },
+          {
+            src: ima2
+          },
+          {
+            src: ima3
+          },
+          {
+            src: ima3
+          }
+        ]
+      }
     }
-}
+  }
 </script>
