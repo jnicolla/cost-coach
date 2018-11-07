@@ -1,8 +1,10 @@
 <template>
-
-
-  <v-timeline>
-     <div class="text-xs-left">
+<div>
+<center> <font color="white">.</font></center>
+ <center> <font color="white">.</font></center>
+ <p align = "left"><font color="#232859"> <h1 class="display-4">Your Timeline</h1></font></p>
+ 
+  <div class="text-xs-left">
     <v-dialog
       v-model="dialog"
       width="500"
@@ -43,16 +45,18 @@
     </v-dialog>
   </div>
   
-
+  <v-timeline>
+    
     <v-timeline-item
-      color="#232859"
+      color="deep purple darken-4"
       fill-dot
       right
     >
     
       <v-card>
-        <v-card-title class="purple lighten-2">
+        <v-card-title class="deep purple darken-4">
           <v-icon
+          color = "#ffa345"
             dark
             size="42"
             class="mr-3"
@@ -64,7 +68,8 @@
         <v-container>
           <v-layout>
             <v-flex xs10>
-              $100
+              Some Medical Information 
+               <br>Cost: $450</br>
             </v-flex>
             <v-flex xs2>
               <v-icon size="64">mdi-calendar-text</v-icon>
@@ -75,26 +80,27 @@
     </v-timeline-item>
 
     <v-timeline-item
-      color="amber lighten-1"
+      color="amber darken-4"
       fill-dot
       left
       small
     >
       <v-card>
-        <v-card-title class="amber lighten-1 justify-end">
+        <v-card-title class="amber darken-4 justify-end">
           <h2 class="display-1 mr-3 white--text font-weight-light">Visit 2: Chemotherapy Session</h2>
           <v-icon
             dark
             size="42"
+            color = "#ffa345"
           >mdi-home-outline</v-icon>
         </v-card-title>
         <v-container>
           <v-layout>
             <v-flex xs8>
-              $35
             </v-flex>
             <v-flex xs4>
-              Medication
+             Some Medical Information 
+               <br>Cost: $350</br>
             </v-flex>
           </v-layout>
         </v-container>
@@ -102,12 +108,12 @@
     </v-timeline-item>
 
     <v-timeline-item
-      color="cyan lighten-1"
+      color="deep purple darken-4"
       fill-dot
       right
     >
       <v-card>
-        <v-card-title class="cyan lighten-1">
+        <v-card-title class="deep purple darken-4">
           <v-icon
             class="mr-3"
             dark
@@ -115,16 +121,13 @@
           >
             mdi-email-outline
           </v-icon>
-          <h2 class="display-1 white--text font-weight-light">Doctor Visit</h2>
+          <h2 class="display-1 white--text font-weight-light">Visit 3: Doctor Visit</h2>
         </v-card-title>
         <v-container>
           <v-layout>
-            <v-flex
-              v-for="n in 3"
-              :key="n"
-              xs4
-            >
-              $400
+             <v-flex xs4>
+             Some Medical Information 
+               <br>Cost: $250</br>
             </v-flex>
           </v-layout>
         </v-container>
@@ -132,14 +135,14 @@
     </v-timeline-item>
 
     <v-timeline-item
-      color="red lighten-1"
+      color="amber darken-4"
       fill-dot
       left
       small
     >
       <v-card>
-        <v-card-title class="red lighten-1 justify-end">
-          <h2 class="display-1 mr-3 white--text font-weight-light">Chemotherapy Session</h2>
+        <v-card-title class="amber darken-4 justify-end">
+          <h2 class="display-1 mr-3 white--text font-weight-light">Visit 4: Chemotherapy Session</h2>
           <v-icon
             dark
             size="42"
@@ -153,7 +156,8 @@
               <v-icon size="64">mdi-server-network</v-icon>
             </v-flex>
             <v-flex xs10>
-               $300
+               Some Medical Information 
+               <br>Cost: $550</br>
             </v-flex>
           </v-layout>
         </v-container>
@@ -161,12 +165,12 @@
     </v-timeline-item>
 
     <v-timeline-item
-      color="green lighten-1"
+      color="green accent-3"
       fill-dot
       right
     >
       <v-card>
-        <v-card-title class="green lighten-1">
+        <v-card-title class="green accent-31">
           <v-icon
             class="mr-3"
             dark
@@ -174,18 +178,20 @@
           >
             mdi-phone-in-talk
           </v-icon>
-          <h2 class="display-1 white--text font-weight-light">Pharmacy Visit</h2>
+          <h2 class="display-1 white--text font-weight-light">Visit 5: Pharmacy Visit; OOP REACHED!</h2>
         </v-card-title>
         <v-container>
           <v-layout>
             <v-flex>
-              $25
+             Some Medical Information 
+               <br>Cost: $150</br>
             </v-flex>
           </v-layout>
         </v-container>
       </v-card>
     </v-timeline-item>
   </v-timeline>
+  </div>
 </template>
 
 

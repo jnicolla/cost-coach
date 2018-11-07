@@ -53,7 +53,7 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn flat @click.native="stepper = 2">Back</v-btn>
-                    <v-btn color="#d65f36" dark @click.native="stepper = 1">Continue</v-btn>
+                    <v-btn color="#d65f36" dark >Continue</v-btn>
                 </v-card-actions>
             </v-stepper-content>
         </v-stepper-items>
