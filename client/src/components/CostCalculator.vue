@@ -1,106 +1,107 @@
 <template>
-<div id="app">
-  <v-app id="inspire">
+<div>
+  <v-app>
     <v-content>
-          <v-stepper v-model="stepper">
-        <v-stepper-header>
-            
-            <div class="step" v-for="(step, index) in steps" :key=index>
-                <v-stepper-step color="#232859"
-                    :edit-icon="'check'"
-                    :complete-icon="'edit'"
-                    :step="index + 1"
-                    :complete="(index + 1 ) <= stepper"
-                    :editable="(index + 1) < stepper">{{ step.label }}</v-stepper-step>
-                <v-divider></v-divider>
+      <v-container fluid>
+        
+        
+        <v-stepper v-model="stepNo">
+          
+          
+          <v-stepper-header>
+            <div v-for="(step,index) in steps" :key=index>
+              <v-stepper-step
+                :edit-icon="'check'"
+                :complete-icon="'edit'"
+                :step="index + 1"
+                :complete="(index+1)<=stepNo"
+                :editable="(index+1)<stepNo"
+              >
+                {{step.label}}
+              </v-stepper-step>
             </div>
+            <!-- need to fix icons -->
+            <v-stepper-step
+              :edit-icon="'assignment'"
+              :complete-icon="'assignment'"
+              :step="4"
+            >
+              Results
+            </v-stepper-step>
+          </v-stepper-header>
+
+
+
+          <v-stepper-items>
             
-        </v-stepper-header>
-        <v-stepper-items>
-            <v-stepper-content step="1">
-                <v-overflow-btn
-            :items="dropdown_icon"
-            label="Insurance Type"
-            segmented
-            color = "#232859"
-          ></v-overflow-btn>
+            <v-stepper-content step="1" height="400px">
+                <v-select
+                  :items="insurancePlans"
+                  v-model="input.insurance"
+                  label="Insurance plan"
+                  hint="Select your insurance plan from the dropdown"
+                  persistent-hint
+                >
+                </v-select>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn flat @click.native="stepper = 1">Back</v-btn>
-                    <v-btn color="#d65f36" dark @click.native="stepper = 2">Continue</v-btn>
+                    <v-btn v-if="input.insurance" color="primary" @click.native="stepNo = 2">Continue</v-btn>
+                    <v-btn v-else disabled color="primary" @click.native="stepNo = 2">Continue</v-btn>
                 </v-card-actions>
+            
             </v-stepper-content>
+
             <v-stepper-content step="2">
-               <v-overflow-btn
-            :items="dropdown_icon2"
-            label="Diagnosis"
-            segmented
-            color = "#232859"
-          ></v-overflow-btn>
+                <v-select
+                    :items="diagnoses"
+                    v-model="input.diagnosis"
+                    label="Diagnosis"
+                    hint="Select your diagnosis"
+                    persistent-hint
+                >
+                </v-select>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn flat @click.native="stepper = 1">Back</v-btn>
-                    <v-btn color="#d65f36" dark @click.native="stepper = 3">Continue</v-btn>
+                    <v-btn flat @click.native="stepNo = 1">Back</v-btn>
+                    <v-btn v-if="input.diagnosis" color="primary" @click.native="stepNo = 3">Continue</v-btn>
+                    <v-btn v-else disabled color="primary" @click.native="stepNo = 3">Continue</v-btn>
                 </v-card-actions>
             </v-stepper-content>
+            
             <v-stepper-content step="3">
-               <v-overflow-btn
-            :items="dropdown_icon3"
-            label="Medication"
-            segmented
-            color = "#232859"
-          ></v-overflow-btn>
+                <v-select
+                    :items="medications"
+                    v-model="input.medications"
+                    label="Medications"
+                    hint="Select your medications"
+                    persistent-hint
+                    multiple
+                >
+                </v-select>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn flat @click.native="stepper = 2">Back</v-btn>
-                    <v-btn color="#d65f36" dark >Continue</v-btn>
+                    <v-btn flat @click.native="stepNo = 2">Back</v-btn>
+                    <v-btn v-if="allInputs" color="success" @click.native="submit">Submit</v-btn>
+                    <v-btn v-else disabled color="success" @click.native="submit">Submit</v-btn>
                 </v-card-actions>
             </v-stepper-content>
-        </v-stepper-items>
-  </v-stepper>
-  <template>
-  <div class="text-xs-center">
-    <v-dialog
-      v-model="dialog"
-      width="500"
-    >
-      <v-btn
-        slot="activator"
-        color="#232859"
-        dark
-      >
-        What is this? Click Me to learn more
-      </v-btn>
+            
+            <v-stepper-content step="4">
+              <div class="text-xs-center">
+                <v-progress-circular v-if="loading" :size="100" color="primary" indeterminate></v-progress-circular>
+                <div v-else>
+                  <Timeline :data="tlData"></Timeline>
+                </div>
+              </div>
+            </v-stepper-content>
 
-      <v-card>
-        <v-card-title
-          class="headline grey lighten-2"
-          primary-title
-        >
-          What is the cost calculator?
-        </v-card-title>
-
-        <v-card-text>
-          This is the cost calculator. Please answer every question in this survey.
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            flat
-            @click="dialog = false"
-          >
-            Ok, got it!
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </div>
-</template>
-
+          </v-stepper-items>
+        
+        
+        </v-stepper>
+      
+      
+      </v-container>
     </v-content>
   </v-app>
 </div>
@@ -109,43 +110,67 @@
 
 
 <script>
-  export default 
-{
-  data: () => ({
+import axios from "axios";
+import Timeline from './Timeline'
 
-      dialog: false,
-     
-                stepper: 0,
-            steps: [
-                {
-                    label: 'Insurance',
-                    completed: false,
-                },
-                {
-                    label: 'Diagnosis',
-                    completed: false,
-                },
-                {
-                    label: 'Medication',
-                    completed: false,
-                },
-            ],
-            dropdown_icon: [
-      { text: 'Duke Basic', callback: () => console.log('Duke Basic') },
-      { text: 'Duke Select', callback: () => console.log('Duke Select') },
-      { text: 'Duke Care', callback: () => console.log('Duke Care') },
-      { text: 'Duke Option', callback: () => console.log('Duke Option') },
-    ],
-     dropdown_icon2: [
-      { text: 'Prostate Cancer', callback: () => console.log('Prostate Cancer') }
-     ],
-     dropdown_icon3: [
-      { text: 'Abiraterone', callback: () => console.log('Abiraterone') },
-      { text: 'Docetaxel', callback: () => console.log('Docetaxel') }
-     ],
-   
-  }),
-   
+export default {
+
+  data() {
+    return {
+      stepNo: 0,
+
+      steps: [
+        {
+          label: "Insurance"
+        },
+        {
+          label: "Diagnosis"
+        },
+        {
+          label: "Medications"
+        }
+      ],
+
+      insurancePlans: ["Duke Basic", "Duke Select","Duke Care","Duke Option"],
+
+      diagnoses: ["Prostate Cancer"],
+
+      medications: ["Abiraterone","Docetaxel"],
+
+      input: {
+        insurance: "",
+        diagnosis: "",
+        medications: []
+      },
+
+      loading: true,
+
+      tlData: {}
+    }
+  },
+
+  components: {
+    Timeline
+  },
+
+  computed: {
+    allInputs() {
+      return this.input.insurance && this.input.diagnosis && this.input.medications.length;
+    }
+  },
+
+  methods: {
+    submit() {
+      this.stepNo = 4;
+      this.loading = true;
+      const path = "http://localhost:5000/test"; // hardcoded - will need to change for production
+      axios.post(path, this.input).then((res) => {
+        this.tlData = res.data;
+        this.loading = false;
+      }).catch((err) => {
+        console.log(err);
+      });
+    }
+  }
 }
-
 </script>

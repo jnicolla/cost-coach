@@ -13,11 +13,6 @@
     <router-link to = "/CostCalculator">
              <v-btn flat>Cost Calculator</v-btn>
       </router-link>
-
-     
-      <router-link to = "/Timeline">
-             <v-btn flat>Timeline</v-btn>
-      </router-link>
       
        <router-link to = "/Guide">
              <v-btn flat>Conversation Guideline</v-btn>
