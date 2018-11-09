@@ -1,288 +1,58 @@
 <template>
 
-  <v-card flat>
-    <v-card-text>
-      <div class="text-xs-center">
-    <v-dialog
-      v-model="dialog"
-      width="500"
-    >
-      <v-btn
-        slot="activator"
-        color="#232859"
-        dark
-      >
-        How do I use this? Click me to learn more
-      </v-btn>
-
-      <v-card>
-        <v-card-title
-          class="headline grey lighten-2"
-          primary-title
-        >
-          How to use the conversational guide
-        </v-card-title>
-
-        <v-card-text>
-          Check the boxes that you are interested in
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            flat
-            @click="dialog = false"
-          >
-            Ok, Got it!
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </div>
+<div>
       <v-container fluid>
         <v-layout row wrap>
           <v-flex xs12 sm4 md4>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
+            <v-checkbox v-for="question in questions" :key="question.id"
+              :label="question.q"
+              :value="question.q"
               color="red"
-              value="red"
               hide-details
+              v-model="question.checked"
             ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red darken-3"
-              value="red darken-3"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red"
-              value="red"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red darken-3"
-              value="red darken-3"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red"
-              value="red"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red"
-              value="red"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red darken-3"
-              value="red darken-3"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red"
-              value="red"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red darken-3"
-              value="red darken-3"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="red"
-              value="red"
-              hide-details
-            ></v-checkbox>
-           
-          </v-flex>
-          <v-flex xs12 sm4 md4>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo"
-              value="indigo"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo darken-3"
-              value="indigo darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo"
-              value="indigo"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo darken-3"
-              value="indigo darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo"
-              value="indigo"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo darken-3"
-              value="indigo darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo"
-              value="indigo"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo darken-3"
-              value="indigo darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo"
-              value="indigo"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="indigo darken-3"
-              value="indigo darken-3"
-              hide-details
-            ></v-checkbox>
-          
-          </v-flex>
-          <v-flex xs12 sm4 md4>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange"
-              value="orange"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange darken-3"
-              value="orange darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange"
-              value="orange"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange darken-3"
-              value="orange darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange"
-              value="orange"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange darken-3"
-              value="orange darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange"
-              value="orange"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange darken-3"
-              value="orange darken-3"
-              hide-details
-            ></v-checkbox>
-             <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange"
-              value="orange"
-              hide-details
-            ></v-checkbox>
-            <v-checkbox
-              v-model="ex4"
-              label="Question"
-              color="orange darken-3"
-              value="orange darken-3"
-              hide-details
-            ></v-checkbox>
-            
           </v-flex>
         </v-layout>
       </v-container>
-       <v-btn round color="#d65f36" dark>Create PDF</v-btn>
+       <v-btn round color="#d65f36" dark @click="genPDF">Create PDF</v-btn>
 
-       
-    
-    </v-card-text>
-
-  </v-card>
-  
+</div>       
 </template>
 
 <script>
+import jsPDF from "jspdf"
 
-export default 
-{
-  data: () => ({
- 
- 
-        dialog: false
-}),
+export default {
+  data() {
+    return {
+      questions:[
+        {
+          q:"If tomato is a fruit, is ketchup a smoothie?",
+          checked:false
+        },
+        {q:"If a cyclops closes its eye, is it blinking or winking?", checked:false},
+        {q:"If you succeed in an attempt to fail, have you succeeded or failed?", checked:false},
+        {q:"What color does a Smurf turn when you choke it?", checked:false}
+      ]
+    }
+  },
+
+  computed: {
+    checkedQs() {
+      return this.questions.filter((question) => {
+        return question.checked;
+      }).map((question) => {
+        return question.q;
+      });
+    }
+  },
+
+  methods: {
+    genPDF() {
+      var doc = new jsPDF();
+      doc.text(30,30,this.checkedQs);
+      doc.save("Questions.pdf");
+    }
+  }
 }
 </script>
