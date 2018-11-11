@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "jspdf": "^1.4.1",
     "nodemon": "^1.18.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
@@ -38,6 +39,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^23.6.0",
+    "jest-transform-stub": "^1.0.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.9.4",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -73,7 +75,8 @@
   "jest": {
     "transform": {
       "^.+\\.vue$": "vue-jest",
-      "^.+\\.js$": "babel-jest"
+      "^.+\\.js$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|svg|ttf|woff|woff2)$": "jest-transform-stub"
     }
   }
 }

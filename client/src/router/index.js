@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Timeline from '@/components/Timeline'
 import CostCalculator from '@/components/CostCalculator'
 import Disclaimer from '@/components/Disclaimer'
 import Guide from '@/components/Guide'
@@ -20,11 +19,6 @@ export default new Router({
       path: '/Home',
       name: 'Home',
       component: Home
-    },
-    {
-      path: '/Timeline',
-      name: 'Timeline',
-      component: Timeline
     },
     {
       path: '/CostCalculator',
