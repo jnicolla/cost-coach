@@ -13,13 +13,13 @@ def dummy_calc(insurance, out_of_pocket, copay, diagnosis, medications):
         plan = '11512NC0060024'    
      if insurance == 'Duke Options':
         plan = '11512NC0060028'    
-     csv_f = open('Step-by-Step Changes in OOPM and Deductibles for Prostate IV 150.csv', 'r')
+     csv_f = open('\csvfiles\Step-by-Step Changes in OOPM and Deductibles for Prostate IV 150.csv', 'r')
      csv_f = csv_f.readlines()
      line_1 = csv_f[0]
      line_1 = line_1.split(',')
      x  = PrettyTable([line_1[0], line_1[1],  line_1[2], line_1[3], line_1[4], line_1[5], line_1[6], line_1[7]])
            
-     with open('Step-by-Step Changes in OOPM and Deductibles for Prostate IV 150.csv') as csv_file:
+     with open('\csvfiles\Step-by-Step Changes in OOPM and Deductibles for Prostate IV 150.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         
         line_count = 0
@@ -39,10 +39,10 @@ def dummy_calc(insurance, out_of_pocket, copay, diagnosis, medications):
              
      #print (f'Processed {line_count} lines.')
      html_code = x.get_html_string()
-     html_file = open('table.html', 'w')
+     html_file = open('\data_out_table\table.html', 'w')
      html_file = html_file.write(html_code)
      sentence =''
-     with open('Final Plans for Scenario Prostate IV 150.csv') as csv_file:
+     with open('\csvfiles\Final Plans for Scenario Prostate IV 150.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         
         line_count = 0
