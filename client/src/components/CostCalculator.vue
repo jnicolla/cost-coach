@@ -164,6 +164,7 @@ export default {
       this.stepNo = 4;
       this.loading = true;
       const path = process.env.API_URL + "/test";
+      console.log(path);
       axios.post(path, this.input).then((res) => {
         this.tlData = res.data;
         this.loading = false;
