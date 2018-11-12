@@ -81,8 +81,8 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn flat @click.native="stepNo = 2">Back</v-btn>
-                    <v-btn v-if="allInputs" color="success" @click.native="submit">Submit</v-btn>
-                    <v-btn v-else disabled color="success" @click.native="submit">Submit</v-btn>
+                    <v-btn v-if="allInputs" color="success" @click.native="submit">aslkdjfh</v-btn>
+                    <v-btn v-else disabled color="success" @click.native="submit">asdlfjkh</v-btn>
                 </v-card-actions>
             </v-stepper-content>
             
