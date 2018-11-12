@@ -1,11 +1,18 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from dummy import dummy_calc # replace this line/method with the provided algo
+from src.dummy import dummy_calc # replace this line/method with the provided algo
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 
 CORS(app)
+
+def ret_app():
+    return app
+
+@app.route('/')
+def index():
+    return '<h1>Hello world!</h1>'
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
@@ -29,7 +36,3 @@ def test():
         "Visit 3:Pharmacy Visit;March 3, 2019;$0"
         ]
     return jsonify({'events':data})
-
-
-if __name__=='__main__':
-    app.run()
