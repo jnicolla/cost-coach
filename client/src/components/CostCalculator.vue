@@ -38,7 +38,7 @@
                 <v-select
                   :items="insurancePlans"
                   v-model="input.insurance"
-                  label="Insurance plan"
+                  label="Insurance hahahahahahaha"
                   hint="Select your insurance plan from the dropdown"
                   persistent-hint
                 >
