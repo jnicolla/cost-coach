@@ -12,6 +12,7 @@ def ret_app():
 
 @app.route('/')
 def index():
+    # will eventually want this and other routes to redirect to the costcoach site
     return '<h1>Hello world!</h1>'
 
 @app.route('/calculate', methods=['POST'])

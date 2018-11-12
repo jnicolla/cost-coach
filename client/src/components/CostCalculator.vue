@@ -38,7 +38,7 @@
                 <v-select
                   :items="insurancePlans"
                   v-model="input.insurance"
-                  label="Insurance"
+                  label="Insurance plan"
                   hint="Select your insurance plan from the dropdown"
                   persistent-hint
                 >
@@ -163,8 +163,8 @@ export default {
     submit() {
       this.stepNo = 4;
       this.loading = true;
-      const path = "https://costcoachserver.herokuapp.com/test";
-      console.log(path);
+      const path = (process.env.NODE_ENV == "production")?
+        "https://costcoachserver.herokuapp.com/test":"http://localhost:5000";
       axios.post(path, this.input).then((res) => {
         this.tlData = res.data;
         this.loading = false;
