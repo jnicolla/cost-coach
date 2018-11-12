@@ -163,7 +163,7 @@ export default {
     submit() {
       this.stepNo = 4;
       this.loading = true;
-      const path = process.env.API_URL + "/test";
+      const path = "https://costcoachserver.herokuapp.com/test";
       console.log(path);
       axios.post(path, this.input).then((res) => {
         this.tlData = res.data;
