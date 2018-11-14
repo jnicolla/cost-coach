@@ -163,7 +163,8 @@ export default {
     submit() {
       this.stepNo = 4;
       this.loading = true;
-      const path = "http://localhost:5000/test"; // hardcoded - will need to change for production
+      const path = (process.env.NODE_ENV == "production")?
+        "https://costcoachserver.herokuapp.com/test":"http://localhost:5000";
       axios.post(path, this.input).then((res) => {
         this.tlData = res.data;
         this.loading = false;
