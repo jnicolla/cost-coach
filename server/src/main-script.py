@@ -28,7 +28,7 @@ def planDict(filelist):
 
 def writeGenericFile(infodict):
     for k,v in infodict.items():
-        filename = "Step-by-Step Changes in OOPM and Deductibles for " + k + ".csv"
+        filename = "./csvfiles/Step-by-Step Changes in OOPM and Deductibles for " + k + ".csv"
         header  = ["Plan", 'Metal Level', 'OOPM', 'Deductible', 'Drug Deductible', 'Number of Claims', 'Visits', 'Category']
         with open(filename, 'w') as newFile:
             tempWrite = csv.writer(newFile)
@@ -39,7 +39,7 @@ def writeGenericFile(infodict):
 
 def writeFinalFile(infodict):
     for k,v in infodict.items():
-        filename = "Final Plans for Scenario " + k + ".csv"
+        filename = "./csvfiles/Final Plans for Scenario " + k + ".csv"
         header  = ["Plan", 'Metal Level', 'OOPM', 'Deductible', 'Drug Deductible', 'Number of Claims', 'Visits', 'Category']
         with open(filename, 'w') as newFile:
             tempWrite = csv.writer(newFile)
@@ -61,8 +61,8 @@ def scenarioDict(filelist):
     
 
 if __name__ == '__main__':
-    insuranceFile = "Copy QHP.csv"
-    pathwaysFile = "Prostate IV Oral 150 - Full Year Regimens with Categories.csv"
+    insuranceFile = "./csvfiles/Copy QHP1.csv"
+    pathwaysFile = "./csvfiles/Prostate IV Oral 150 - Full Year Regimens with Categories.csv"
     tempInsuranceFileList = readfile(insuranceFile)
     insuranceFileList = tempInsuranceFileList[1:]
     tempPathwaysFileList = readfile(pathwaysFile)
