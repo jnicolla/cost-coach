@@ -61,7 +61,7 @@ def scenarioDict(filelist):
     
 
 if __name__ == '__main__':
-    insuranceFile = "./csvfiles/Copy QHP1.csv"
+    insuranceFile = "./csvfiles/Copy QHP.csv"
     pathwaysFile = "./csvfiles/Prostate IV Oral 150 - Full Year Regimens with Categories.csv"
     tempInsuranceFileList = readfile(insuranceFile)
     insuranceFileList = tempInsuranceFileList[1:]
