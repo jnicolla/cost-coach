@@ -1,17 +1,25 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from src.process_data import script_calc # replace this line/method with the provided algo
+from src.dummy import dummy_calc # replace this line/method with the provided algo
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 
 CORS(app)
 
+def ret_app():
+    return app
+
+@app.route('/')
+def index():
+    # will eventually want this and other routes to redirect to the costcoach site
+    return '<h1>Hello world!</h1>'
+
 @app.route('/calculate', methods=['POST'])
 def calculate():
     answers = request.get_json()
-    # res = script_calc(answers.get('insurance'),answers.get('outOfPocket'),answers.get('copay'),answers.get('diagnosis'),answers.get('medications'))
-    res = script_calc('Duke Select', 'Prostate Cancer', 'Oral')
+    res = dummy_calc(answers.get('insurance'),answers.get('outOfPocket'),answers.get('copay'),answers.get('diagnosis'),answers.get('medications'))
+    #cost = dummy_cost(answers.get('insurance'),answers.get('outOfPocket'),answers.get('copay'),answers.get('diagnosis'),answers.get('medications'))
     response = { 'html':res[0], 'cost':res[1]}
     return jsonify(response)
 
@@ -29,7 +37,3 @@ def test():
         "Visit 3:Pharmacy Visit;March 3, 2019;$0"
         ]
     return jsonify({'events':data})
-
-
-if __name__=='__main__':
-    app.run()
