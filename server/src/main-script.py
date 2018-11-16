@@ -1,7 +1,12 @@
+import os
 import csv
 import Plinko_Model
 from Plinko_Model import insuranceFunc
 
+def getPath(rel_path):
+    script_path = os.path.abspath(__file__)
+    script_dir = os.path.split(script_path)[0]
+    return os.path.join(script_dir, rel_path)
 
 def readfile(filename):
     retlist = []
@@ -28,7 +33,8 @@ def planDict(filelist):
 
 def writeGenericFile(infodict):
     for k,v in infodict.items():
-        filename = "./csvfiles/Step-by-Step Changes in OOPM and Deductibles for " + k + ".csv"
+        rel_path = "csvfiles/Step-by-Step Changes in OOPM and Deductibles for " + k + ".csv"
+        filename = getPath(rel_path)
         header  = ["Plan", 'Metal Level', 'OOPM', 'Deductible', 'Drug Deductible', 'Number of Claims', 'Visits', 'Category']
         with open(filename, 'w') as newFile:
             tempWrite = csv.writer(newFile)
@@ -39,7 +45,8 @@ def writeGenericFile(infodict):
 
 def writeFinalFile(infodict):
     for k,v in infodict.items():
-        filename = "./csvfiles/Final Plans for Scenario " + k + ".csv"
+        rel_path = "csvfiles/Final Plans for Scenario " + k + ".csv"
+        filename = getPath(rel_path)
         header  = ["Plan", 'Metal Level', 'OOPM', 'Deductible', 'Drug Deductible', 'Number of Claims', 'Visits', 'Category']
         with open(filename, 'w') as newFile:
             tempWrite = csv.writer(newFile)
@@ -61,8 +68,12 @@ def scenarioDict(filelist):
     
 
 if __name__ == '__main__':
-    insuranceFile = "./csvfiles/Copy QHP.csv"
-    pathwaysFile = "./csvfiles/Prostate IV Oral 150 - Full Year Regimens with Categories.csv"
+    insuranceFile_rel_path = "csvfiles/Copy QHP.csv"
+    insuranceFile = getPath(insuranceFile_rel_path)
+
+    pathwaysFile_rel_path = "csvfiles/Prostate IV Oral 150 - Full Year Regimens with Categories.csv"
+    pathwaysFile = getPath(pathwaysFile_rel_path)
+
     tempInsuranceFileList = readfile(insuranceFile)
     insuranceFileList = tempInsuranceFileList[1:]
     tempPathwaysFileList = readfile(pathwaysFile)

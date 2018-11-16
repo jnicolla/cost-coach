@@ -75,7 +75,6 @@
                     label="Medications"
                     hint="Select your medications"
                     persistent-hint
-                    multiple
                 >
                 </v-select>
                 <v-card-actions>
@@ -117,6 +116,7 @@ export default {
 
   data() {
     return {
+      /* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */
       stepNo: 0,
 
       steps: [
@@ -135,12 +135,12 @@ export default {
 
       diagnoses: ["Prostate Cancer"],
 
-      medications: ["Abiraterone","Docetaxel"],
+      medications: ["Oral","IV"],
 
       input: {
         insurance: "",
         diagnosis: "",
-        medications: []
+        medications: ""
       },
 
       loading: true,
@@ -164,10 +164,12 @@ export default {
       this.stepNo = 4;
       this.loading = true;
       const path = (process.env.NODE_ENV == "production")?
-        "https://costcoachserver.herokuapp.com/test":"http://localhost:5000";
+        "https://costcoachserver.herokuapp.com/calculate":"http://localhost:5000/calculate";
+      
       axios.post(path, this.input).then((res) => {
         this.tlData = res.data;
         this.loading = false;
+        console.log(res.data);
       }).catch((err) => {
         console.log(err);
       });
