@@ -7,6 +7,22 @@ app.config.from_object(__name__)
 
 CORS(app)
 
+<<<<<<< HEAD
+def ret_app():
+    return app
+
+@app.route('/')
+def index():
+    '''
+    Shows the server is up and running
+    @ https://costcoachserver.herokuapp.com
+    Will eventually want to reroute to Costcoach site
+    but leave for testing purposes
+    '''
+    return '<h1>Hello world!</h1>'
+
+=======
+>>>>>>> f606e69ada931553fae2950d459201e7029e56f6
 @app.route('/calculate', methods=['POST'])
 def calculate():
     answers = request.get_json()
