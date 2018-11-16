@@ -12,7 +12,12 @@ def ret_app():
 
 @app.route('/')
 def index():
-    # will eventually want this and other routes to redirect to the costcoach site
+    '''
+    Shows the server is up and running
+    @ https://costcoachserver.herokuapp.com
+    Will eventually want to reroute to Costcoach site
+    but leave for testing purposes
+    '''
     return '<h1>Hello world!</h1>'
 
 @app.route('/calculate', methods=['POST'])
