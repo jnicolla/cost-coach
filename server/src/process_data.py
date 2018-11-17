@@ -1,7 +1,7 @@
 import os
 import sys
 import csv
-from main-script import getPath
+from .main_script import getPath
 from prettytable import PrettyTable
 
 def script_calc(insurance, diagnosis, medications):

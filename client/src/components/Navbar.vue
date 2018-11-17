@@ -1,30 +1,62 @@
 <template>
-  <v-toolbar color = "#d65f36" dark>
-   
-    <v-toolbar-title>CostCoach</v-toolbar-title>
+  <v-toolbar color="#232859" dark>
+    <v-toolbar-side-icon to="/">
+      <img src="../assets/favicon.png" height="30px">
+    </v-toolbar-side-icon>
+    <v-toolbar-title class="ml-0">CostCoach</v-toolbar-title>
     <v-spacer></v-spacer>
     <div class="hidden-sm-and-down">
-     
-    <router-link to = "/Home">
-              <v-btn flat>Home</v-btn>
+      <router-link v-for="(link,index) in links" :key="index" :to="link.href">
+        <v-btn flat>{{ link.label }}</v-btn>
       </router-link>
-
-
-    <router-link to = "/CostCalculator">
-             <v-btn flat>Cost Calculator</v-btn>
-      </router-link>
-      
-       <router-link to = "/Guide">
-             <v-btn flat>Conversation Guideline</v-btn>
-      </router-link>
-
-    <router-link to = "/Disclaimer">
-             <v-btn flat>Disclaimer</v-btn>
-      </router-link>
-
-
-
-
     </div>
+
+    <v-menu class="hidden-md-and-up" offset-y>
+      <v-btn slot="activator" icon>
+        <v-icon>menu</v-icon>
+      </v-btn>
+      <v-list>
+        <v-list-tile v-for="(link,index) in links"
+          :key="index"
+          :to="link.href"
+          @click=""
+        >
+          <v-list-tile-title>{{ link.label }}</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-menu>
   </v-toolbar>
 </template>
+
+<script>
+export default {
+  name: "Navbar",
+
+  data() {
+    return {
+      links: [
+        {
+          label: "Home",
+          href: "/"
+        },
+        {
+          label: "Calculator",
+          href: "/calculator"
+        },
+        {
+          label: "Guide",
+          href: "/guide"
+        },
+        {
+          label: "Disclaimer",
+          href: "/disclaimer"
+        }
+      ]
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

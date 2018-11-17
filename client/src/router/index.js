@@ -5,7 +5,6 @@ import CostCalculator from '@/components/CostCalculator'
 import Disclaimer from '@/components/Disclaimer'
 import Guide from '@/components/Guide'
 
-
 Vue.use(Router)
 
 export default new Router({
@@ -16,22 +15,17 @@ export default new Router({
       component: Home
     },
     {
-      path: '/Home',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/CostCalculator',
+      path: '/calculator',
       name: 'CostCalculator',
       component: CostCalculator
     },
     {
-      path: '/Disclaimer',
+      path: '/disclaimer',
       name: 'Disclaimer',
       component: Disclaimer
     }, 
     {
-      path: '/Guide',
+      path: '/guide',
       name: 'Guide',
       component: Guide
     }

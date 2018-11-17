@@ -1,108 +1,143 @@
 <template>
 <div>
-  <v-app>
-    <v-content>
-      <v-container fluid>
-        
-        
-        <v-stepper v-model="stepNo">
-          
-          
-          <v-stepper-header>
-            <div v-for="(step,index) in steps" :key=index>
-              <v-stepper-step
-                :edit-icon="'check'"
-                :complete-icon="'edit'"
-                :step="index + 1"
-                :complete="(index+1)<=stepNo"
-                :editable="(index+1)<stepNo"
-              >
-                {{step.label}}
-              </v-stepper-step>
-            </div>
-            <!-- need to fix icons -->
-            <v-stepper-step
-              :edit-icon="'assignment'"
-              :complete-icon="'assignment'"
-              :step="4"
-            >
-              Results
-            </v-stepper-step>
-          </v-stepper-header>
-
-
-
-          <v-stepper-items>
+  <v-content>
+    <v-container fluid>
+      <v-layout justify-center row fill-height>
+        <v-flex xs11 md8 lg6>
+          <v-stepper v-model="stepNo">
             
-            <v-stepper-content step="1" height="400px">
+            <v-stepper-header>
+              <template v-for="(step,index) in steps">
+                <v-stepper-step
+                  :edit-icon="'check'"
+                  :complete-icon="getIcon(index)"
+                  :step="index + 1"
+                  :complete="(index+1)<=stepNo"
+                  :editable="(index+1)<stepNo"
+                  :key="step.label"
+                  color="#d65f36"
+                >
+                  {{step.label}}
+                </v-stepper-step>
+                <v-divider :key="index" v-if="index<3"></v-divider>
+              </template>
+            </v-stepper-header>
+
+
+
+            <v-stepper-items>
+              
+              <v-stepper-content step="1" height="400px">
+                <h4 class="display-1 font-weight-light grey--text text--darken-3 mb-3">Insurance</h4>
                 <v-select
                   :items="insurancePlans"
                   v-model="input.insurance"
                   label="Insurance plan"
                   hint="Select your insurance plan from the dropdown"
                   persistent-hint
+                  class="mb-3"
+                  color="#d65f36"
                 >
                 </v-select>
                 <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn v-if="input.insurance" color="primary" @click.native="stepNo = 2">Continue</v-btn>
-                    <v-btn v-else disabled color="primary" @click.native="stepNo = 2">Continue</v-btn>
+                  <v-btn outline @click="helpDialog=!helpDialog" color="primary">Help</v-btn>
+                  <v-spacer></v-spacer>
+                  <v-btn v-if="input.insurance" color="primary" @click.native="stepNo = 2">Continue</v-btn>
+                  <v-btn v-else disabled color="primary" @click.native="stepNo = 2">Continue</v-btn>
                 </v-card-actions>
-            
-            </v-stepper-content>
+              </v-stepper-content>
 
-            <v-stepper-content step="2">
+              <v-stepper-content step="2">
+                <h4 class="display-1 font-weight-light grey--text text--darken-3 mb-3">Diagnosis</h4>
                 <v-select
-                    :items="diagnoses"
-                    v-model="input.diagnosis"
-                    label="Diagnosis"
-                    hint="Select your diagnosis"
-                    persistent-hint
+                  :items="diagnoses"
+                  v-model="input.diagnosis"
+                  label="Diagnosis"
+                  hint="Select your diagnosis"
+                  persistent-hint
+                  class="mb-3"
+                  color="#d65f36"
                 >
                 </v-select>
                 <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn flat @click.native="stepNo = 1">Back</v-btn>
-                    <v-btn v-if="input.diagnosis" color="primary" @click.native="stepNo = 3">Continue</v-btn>
-                    <v-btn v-else disabled color="primary" @click.native="stepNo = 3">Continue</v-btn>
+                  <v-btn outline @click="helpDialog=!helpDialog" color="primary">Help</v-btn>
+                  <v-spacer></v-spacer>
+                  <v-btn flat @click.native="stepNo = 1">Back</v-btn>
+                  <v-btn v-if="input.diagnosis" color="primary" @click.native="stepNo = 3">Continue</v-btn>
+                  <v-btn v-else disabled color="primary" @click.native="stepNo = 3">Continue</v-btn>
                 </v-card-actions>
-            </v-stepper-content>
-            
-            <v-stepper-content step="3">
+              </v-stepper-content>
+              
+              <v-stepper-content step="3">
+                <h4 class="display-1 font-weight-light grey--text text--darken-3 mb-3">Medications</h4>
                 <v-select
-                    :items="medications"
-                    v-model="input.medications"
-                    label="Medications"
-                    hint="Select your medications"
-                    persistent-hint
+                  :items="medications"
+                  v-model="input.medications"
+                  label="Medications"
+                  hint="Select how you take your medications"
+                  persistent-hint
+                  class="mb-3"
+                  color="#d65f36"
                 >
                 </v-select>
                 <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn flat @click.native="stepNo = 2">Back</v-btn>
-                    <v-btn v-if="allInputs" color="success" @click.native="submit">Submit</v-btn>
-                    <v-btn v-else disabled color="success" @click.native="submit">Submit</v-btn>
+                  <v-btn outline @click="helpDialog=!helpDialog" color="primary">Help</v-btn>
+                  <v-spacer></v-spacer>
+                  <v-btn flat @click.native="stepNo = 2">Back</v-btn>
+                  <v-btn v-if="allInputs" color="success" @click.native="submit">Submit</v-btn>
+                  <v-btn v-else disabled color="success" @click.native="submit">Submit</v-btn>
                 </v-card-actions>
-            </v-stepper-content>
-            
-            <v-stepper-content step="4">
-              <div class="text-xs-center">
-                <v-progress-circular v-if="loading" :size="100" color="primary" indeterminate></v-progress-circular>
-                <div v-else>
-                  <Timeline :data="tlData"></Timeline>
-                </div>
-              </div>
-            </v-stepper-content>
+              </v-stepper-content>
+              
+              <v-stepper-content step="4">
+                <transition name="fade" mode="out-in">
+                  <div v-if="loading" class="text-xs-center" key="load">
+                    <v-progress-circular :size="100" color="#d65f36" indeterminate></v-progress-circular>
+                  </div>
+                  <div v-else key="tl">
+                    <div class="ml-3">
+                      <Timeline :data="tlData"></Timeline>
+                    </div>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn flat @click.native="resetCalc">Back</v-btn>
+                      <v-btn color="primary" outline @click.native="printTimeline">Print</v-btn>
+                    </v-card-actions>
+                  </div>
+                </transition>
+              </v-stepper-content>
 
-          </v-stepper-items>
-        
-        
-        </v-stepper>
-      
-      
-      </v-container>
-    </v-content>
-  </v-app>
+            </v-stepper-items>
+          
+          </v-stepper>
+
+          <div class="text-xs-center">
+            <v-dialog v-model="helpDialog" max-width="500px">
+              <v-card>
+                <v-card-title primary-title class="mb-0 pb-0">
+                  <h3 class="headline font-weight-light">Cost Calculator</h3>
+                </v-card-title>
+
+                <v-card-text>
+                  <p class="body-2 font-weight-light grey--text">Fill out each section and press "Continue". Once you have filled out all the steps, you will be taken to a timeline showing each step of your cancer treatment process and when you are expected to reach your out-of-pocket maximum.</p>
+                  <p class="title font-weight-regular">{{ helpDialogText }}</p>
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <div>
+                    <v-btn class="mx-0" color="red" @click="helpDialog=false">
+                      <span class="white--text">Close</span>
+                    </v-btn>
+                  </div>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </div>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-content>
 </div>
 </template>
 
@@ -121,13 +156,16 @@ export default {
 
       steps: [
         {
-          label: "Insurance"
+          label: "Insurance",
         },
         {
           label: "Diagnosis"
         },
         {
           label: "Medications"
+        },
+        {
+          label: "Results"
         }
       ],
 
@@ -145,7 +183,14 @@ export default {
 
       loading: true,
 
-      tlData: {}
+      tlData: {},
+
+      helpDialogDetails: [
+        "This is where you give details that will help the user fill out the insurance section.",
+        "Give some information here about how to fill out the diagnosis section should the client open the help dialog.",
+        "Do you, the user, need some help filling out the medications section? Here are some more details."
+      ],
+      helpDialog: false
     }
   },
 
@@ -156,6 +201,10 @@ export default {
   computed: {
     allInputs() {
       return this.input.insurance && this.input.diagnosis && this.input.medications.length;
+    },
+
+    helpDialogText() {
+      return this.helpDialogDetails[this.stepNo-1];
     }
   },
 
@@ -169,11 +218,32 @@ export default {
       axios.post(path, this.input).then((res) => {
         this.tlData = res.data;
         this.loading = false;
-        console.log(res.data);
       }).catch((err) => {
         console.log(err);
       });
+    },
+
+    printTimeline() {
+      window.print();
+    },
+
+    resetCalc() {
+      this.stepNo = 1;
+      this.loading = true;
+    },
+
+    getIcon(index) {
+      return (index<3)? "edit":"assignment";
     }
   }
 }
 </script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+</style>
