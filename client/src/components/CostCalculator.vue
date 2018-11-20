@@ -205,7 +205,7 @@ export default {
         "Results"
       ],
 
-      insurancePlans: ["Duke Basic", "Duke Select","Duke Care","Duke Option"],
+      insurancePlans: ["Duke Basic", "Duke Select","Duke Care"],
 
       diagnoses: ["Prostate Cancer"],
 
