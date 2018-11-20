@@ -98,7 +98,6 @@
                 >
                 </v-select>
                 <v-card-actions>
-                  <v-btn outline @click="helpDialog=!helpDialog" color="primary">Help</v-btn>
                   <v-spacer></v-spacer>
                   <v-btn flat @click.native="stepNo = 1">Back</v-btn>
                   <v-btn v-if="input.diagnosis" color="primary" @click.native="stepNo = 3">Continue</v-btn>
@@ -127,7 +126,6 @@
                 >
                 </v-select>
                 <v-card-actions>
-                  <v-btn outline @click="helpDialog=!helpDialog" color="primary">Help</v-btn>
                   <v-spacer></v-spacer>
                   <v-btn flat @click.native="stepNo = 2">Back</v-btn>
                   <v-btn v-if="allInputs" color="success" @click.native="submit">Submit</v-btn>

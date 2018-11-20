@@ -11,11 +11,12 @@
       fill-dot
     >
       <div class="py-3 grey--text text--darken-2">
+        <h5 v-if="index==events.length-1" class="subtitle green--text text--darken-2 mb-2">Out of pocket maximum reached</h5>
         <h5 class="headline mb-3">
           {{ index+1 }}. Visit type: <span class="font-weight-bold">{{ event.visit }}</span>
         </h5>
         <div>
-          <span v-if="index==events.length-1"> At this stage, you will have reached your out-of-pocket maximum.</span>
+          <span v-if="index==events.length-1">At this stage, you will have reached your out-of-pocket maximum.</span>
           <span v-else>
             You will be approximately <span class="font-weight-bold">&#36;{{event.money}}</span> 
             away from reaching your out-of-pocket maximum.
