@@ -2,6 +2,28 @@
 <div>
   <v-content>
     <v-container fluid>
+      <v-layout justify-center row fill-height class="mb-4">
+        <v-flex xs11 md8 lg6>
+          <v-card>
+            <v-container>
+              <v-layout>
+                <v-flex>
+                  <div class="mx-4">
+                    <h3 class="display-3 pb-2 font-weight-thin">Cost Calculator</h3>
+                    <p>
+                      <span class="subheading">The survey below will ask you about your insurance plan, diagnosis, and medications. Once submitted, it will generate a timeline showing you each step you'll take in your cancer treatment until you reach your out-of-pocket maximum.</span>
+                    </p>
+                    <p>
+                      <span class="subheading">Press the "?" button for more details on each part of the survey.</span>
+                    </p>
+                  </div>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-card>
+        </v-flex>
+      </v-layout>
+
       <v-layout justify-center row fill-height>
         <v-flex xs11 md8 lg6>
           <v-stepper v-model="stepNo">
@@ -14,10 +36,10 @@
                   :step="index + 1"
                   :complete="(index+1)<=stepNo"
                   :editable="(index+1)<stepNo"
-                  :key="step.label"
+                  :key="step"
                   color="#d65f36"
                 >
-                  {{step.label}}
+                  {{step}}
                 </v-stepper-step>
                 <v-divider :key="index" v-if="index<3"></v-divider>
               </template>
@@ -28,6 +50,14 @@
             <v-stepper-items>
               
               <v-stepper-content step="1" height="400px">
+                <v-fab-transition>
+                  <v-btn fab small absolute right color="#888" flat 
+                    @click="helpDialog=!helpDialog"
+                    v-show="!helpDialog"
+                  >
+                    <v-icon large>help_outline</v-icon>
+                  </v-btn>
+                </v-fab-transition>
                 <h4 class="display-1 font-weight-light grey--text text--darken-3 mb-3">Insurance</h4>
                 <v-select
                   :items="insurancePlans"
@@ -38,9 +68,9 @@
                   class="mb-3"
                   color="#d65f36"
                 >
+                
                 </v-select>
                 <v-card-actions>
-                  <v-btn outline @click="helpDialog=!helpDialog" color="primary">Help</v-btn>
                   <v-spacer></v-spacer>
                   <v-btn v-if="input.insurance" color="primary" @click.native="stepNo = 2">Continue</v-btn>
                   <v-btn v-else disabled color="primary" @click.native="stepNo = 2">Continue</v-btn>
@@ -48,6 +78,14 @@
               </v-stepper-content>
 
               <v-stepper-content step="2">
+                <v-fab-transition>
+                  <v-btn fab small absolute right color="#888" flat 
+                    @click="helpDialog=!helpDialog"
+                    v-show="!helpDialog"
+                  >
+                    <v-icon large>help_outline</v-icon>
+                  </v-btn>
+                </v-fab-transition>
                 <h4 class="display-1 font-weight-light grey--text text--darken-3 mb-3">Diagnosis</h4>
                 <v-select
                   :items="diagnoses"
@@ -69,6 +107,14 @@
               </v-stepper-content>
               
               <v-stepper-content step="3">
+                <v-fab-transition>
+                  <v-btn fab small absolute right color="#888" flat 
+                    @click="helpDialog=!helpDialog"
+                    v-show="!helpDialog"
+                  >
+                    <v-icon large>help_outline</v-icon>
+                  </v-btn>
+                </v-fab-transition>
                 <h4 class="display-1 font-weight-light grey--text text--darken-3 mb-3">Medications</h4>
                 <v-select
                   :items="medications"
@@ -115,7 +161,7 @@
             <v-dialog v-model="helpDialog" max-width="500px">
               <v-card>
                 <v-card-title primary-title class="mb-0 pb-0">
-                  <h3 class="headline font-weight-light">Cost Calculator</h3>
+                  <h3 class="headline font-weight-light">{{ helpDialogLabel }}</h3>
                 </v-card-title>
 
                 <v-card-text>
@@ -155,18 +201,10 @@ export default {
       stepNo: 0,
 
       steps: [
-        {
-          label: "Insurance",
-        },
-        {
-          label: "Diagnosis"
-        },
-        {
-          label: "Medications"
-        },
-        {
-          label: "Results"
-        }
+        "Insurance",
+        "Diagnosis",
+        "Medications",
+        "Results"
       ],
 
       insurancePlans: ["Duke Basic", "Duke Select","Duke Care","Duke Option"],
@@ -201,6 +239,10 @@ export default {
   computed: {
     allInputs() {
       return this.input.insurance && this.input.diagnosis && this.input.medications.length;
+    },
+
+    helpDialogLabel() {
+      return this.steps[this.stepNo-1];
     },
 
     helpDialogText() {

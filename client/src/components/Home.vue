@@ -1,8 +1,8 @@
 <template>
   <v-content>
-    <v-container fluid>
+    <v-container fluid class="pt-0">
       <v-layout justify-center row fill-height wrap>
-        <v-flex xs11 md10 lg9 class="mb-3">
+        <v-flex xs12 md10 lg9 class="mb-3">
           <!-- sets max width -->
           <!-- grid begins here -->
           <v-container fluid grid-list-lg>
@@ -26,7 +26,7 @@
                         <v-divider class="my-3 px-4"></v-divider>
 
                         <div class="mx-4">
-                          <div class="title mb-3 font-weight-light">Click the button below and get started</div>
+                          <div class="title mb-3 font-weight-light">Press the button below and get started</div>
 
                           <v-btn
                             class="mx-0"

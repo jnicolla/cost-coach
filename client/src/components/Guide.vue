@@ -8,12 +8,15 @@
             <v-layout>
               <v-flex>
                 <v-card-title class="display-3 font-weight-thin mx-3 mb-2 pb-0">
-                  CostCoach Guide
+                  Conversational Guide
                 </v-card-title>
                 <v-card-text class="grey--text text--darken-1 title mx-3 pb-0 mb-0 font-weight-light">
-                  Select any questions you have below, click "Generate", 
-                  and bring a printed copy of the generated file to your next doctor's appointment 
-                  to have your questions answered.
+                  <p class="pb-2">The purpose of this guide is to help structure a conversation about the costs of treatment 
+                  with your healthcare professional.</p>
+                  
+                  <p>To use it, select any questions you have below and click "Generate".
+                  This will generate a file containing your selected questions, which you can print and bring to your next doctor's
+                  appointment.</p>
                 </v-card-text>
               </v-flex>
             </v-layout>
@@ -58,13 +61,10 @@ export default {
   data() {
     return {
       questions:[
-        {
-          q:"If tomato is a fruit, is ketchup a smoothie?",
-          checked:false
-        },
-        {q:"If a cyclops closes its eye, is it blinking or winking?", checked:false},
-        {q:"If you succeed in an attempt to fail, have you succeeded or failed?", checked:false},
-        {q:"What color does a Smurf turn when you choke it?", checked:false}
+        {q:"Is my current insurance plan right for me?", checked:false},
+        {q:"What resources are available to help me with financial planning?", checked:false},
+        {q:"What if I can't afford a particular visit/treatment?", checked:false},
+        {q:"Are my drugs covered by my insurance plan?", checked:false}
       ]
     }
   },
