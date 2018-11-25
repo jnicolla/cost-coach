@@ -13,9 +13,6 @@ def script_calc(insurance, diagnosis, medications):
       plan = '11512NC0100036'  
    if insurance == 'Duke Care':
       plan = '11512NC0060024'    
-   if insurance == 'Duke Options':
-      plan = '11512NC0060028'
-    
    data = []  
 #   The uncommented code can be used to form a html table from the data  
 #   csv_f = open('./csvfiles/Step-by-Step Changes in OOPM and Deductibles for Prostate IV 150.csv', 'r')
@@ -30,31 +27,23 @@ def script_calc(insurance, diagnosis, medications):
       fileToOpen_rel_path = 'csvfiles/Step-by-Step Changes in OOPM and Deductibles for Prostate Oral 150.csv'
    fileToOpen = getPath(fileToOpen_rel_path)
    
-   with open(fileToOpen) as csv_file:
+  with open(fileToOpen) as csv_file:
       csv_reader = csv.reader(csv_file, delimiter=',')
-      line_count = 0
+      line_count = 1
       
       for row in csv_reader:
+         if line_count%2==1 and line_count!=1:
             if row[0] == plan:
             #  print(f'For the insurance plan \t{insurance} \t{row[0]} and the metal level {row[1]}, the out of pocket maximum will be reached after {row[5]} claims and {row[6]} visits, at the catagory {row[7]}.')
-               line_count += 1
             #  x.add_row([row[0], row[1],  row[2], row[3], row[4], row[5], row[6], row[7]])
-            
                data.append(f'{row[6]},{row[7]}, {row[2]}')
+         line_count+=1
                
-            #if line_count == 0: row[0] == plan:
-               #print(f'Column names are {", ".join(row)}')
-               #line_count += 1
-            #elif line_count == 2:
-               #print(f'For the insurance plan \t{insurance} \t{row[0]} and the metal level {row[1]}, the out of pocket maximum will be reached after {row[5]} number of claims and {row[6]} visits, at the catagory {row[7]}.')
-            else:
-               line_count += 1
-               
-   csv_file.close()     
+   csv_file.close()    
    
 #   html_code = x.get_html_string()
 #   html_file = open('\data_out_table\table.html', 'w')
-#   html_file = html_file.write(html_code)
+#   html_file = html_file.write(html_code)  ---if you want to write to html file the data results
 
    return data
 
