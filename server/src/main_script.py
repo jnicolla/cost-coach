@@ -1,6 +1,6 @@
 import os
 import csv
-from .Plinko_Model import insuranceFunc
+from Plinko_Model import insuranceFunc
 
 def getPath(rel_path):
     script_path = os.path.abspath(__file__)
