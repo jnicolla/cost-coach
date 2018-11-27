@@ -7,10 +7,10 @@
           <v-container>
             <v-layout>
               <v-flex>
-                <v-card-title class="display-3 font-weight-thin mx-3 mb-2 pb-0">
+                <v-card-title id = "Title" class="display-3 font-weight-thin mx-3 mb-2 pb-0">
                   Conversational Guide
                 </v-card-title>
-                <v-card-text class="grey--text text--darken-1 title mx-3 pb-0 mb-0 font-weight-light">
+                <v-card-text id = "Main_Body" class="grey--text text--darken-1 title mx-3 pb-0 mb-0 font-weight-light">
                   <p class="pb-2">The purpose of this guide is to help structure a conversation about the costs of treatment 
                   with your healthcare professional.</p>
                   
@@ -41,7 +41,7 @@
             <v-layout>
               <v-flex>
                 <v-card-actions class="mx-3">
-                  <v-btn @click="genPDF" color="success">Generate</v-btn>
+                  <v-btn id = "PDFG" @click="genPDF" color="success">Generate</v-btn>
                 </v-card-actions>
               </v-flex>
             </v-layout>

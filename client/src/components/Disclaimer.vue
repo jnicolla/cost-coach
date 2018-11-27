@@ -7,10 +7,10 @@
             <v-layout>
               <v-flex>
                 <div class="mx-4">
-                  <v-card-title>
+                  <v-card-title id = "Title">
                     <h3 class="display-3 font-weight-thin">Privacy Policy</h3>
                   </v-card-title>
-                  <v-card-text class="title font-weight-light">
+                  <v-card-text id = "Main_Body" class="title font-weight-light">
                     <p class="mb-4">
                       CostCoach collects information on your insurance plan, your diagnosis, and your medications. However, it does not 
                       collect any identifying information and does not store the information you provide.
