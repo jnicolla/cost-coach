@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h4 class="display-1 font-weight-light grey--text text--darken-2">Cost Timeline</h4>
+  <h4 id = "timelineTitleObj" class="display-1 font-weight-light grey--text text--darken-2">Cost Timeline</h4>
   <v-timeline dense>
     <v-timeline-item v-for="(event,index) in events"
       :key="index"

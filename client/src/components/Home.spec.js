@@ -43,4 +43,22 @@ describe ('Home.vue',()=>
         
     })
 
+ 
+    test('Test to see if Button is viewable and clickable', () => 
+    {
+        const wrapper = mount(Home)
+        const button = wrapper.find('#CalcButton')
+        wrapper.trigger('click')    
+        
+    })
+
+    test('Checks to see if text on button in V-card 1 is correct ', () => 
+    {
+       
+        const wrapper = mount(Home)
+        const but_1 = wrapper.find('#buttonText')
+        expect (but_1.text()).toBe('Calculator')
+        
+    })
+
 }) 

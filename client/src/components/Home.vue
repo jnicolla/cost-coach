@@ -28,13 +28,13 @@
                         <div class="mx-4">
                           <div class="title mb-3 font-weight-light">Press the button below and get started</div>
 
-                          <v-btn
+                          <v-btn id = "CalcButton" 
                             class="mx-0"
                             color="primary"
                             large
                             to="/calculator"
                           >
-                            <span class="white--text font-weight-bold">Calculator</span>
+                            <span id = "buttonText" class="white--text font-weight-bold">Calculator</span>
                           </v-btn>
                         </div>
                       </v-flex>
