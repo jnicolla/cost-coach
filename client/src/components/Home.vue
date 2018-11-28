@@ -62,14 +62,14 @@
                         <div class="mx-4">
                           <div class="title mb-3 font-weight-light">Find your questions here</div>
 
-                          <v-btn
+                          <v-btn id = "GuideButton"
                             class="mx-0"
                             color="primary"
                             large
                             to="/guide"
                             outline
                           >
-                            <span class="font-weight-bold">Guide</span>
+                            <span id = "gButtonText" class="font-weight-bold">Guide</span>
                           </v-btn>
                         </div>
                       </v-flex>

@@ -44,7 +44,7 @@ describe ('Home.vue',()=>
     })
 
  
-    test('Test to see if Button is viewable and clickable', () => 
+    test('Test to see if Button  in vCard1 is viewable and clickable', () => 
     {
         const wrapper = mount(Home)
         const button = wrapper.find('#CalcButton')
@@ -52,7 +52,7 @@ describe ('Home.vue',()=>
         
     })
 
-    test('Checks to see if text on button in V-card 1 is correct ', () => 
+    test('Checks to see if text on button in V-card1 is correct ', () => 
     {
        
         const wrapper = mount(Home)
@@ -61,4 +61,20 @@ describe ('Home.vue',()=>
         
     })
 
+    test('Test to see if Button in vCard2 is viewable and clickable', () => 
+    {
+        const wrapper = mount(Home)
+        const button = wrapper.find('#GuideButton')
+        wrapper.trigger('click')    
+        
+    })
+
+    test('Checks to see if text on button in V-card2 is correct ', () => 
+    {
+       
+        const wrapper = mount(Home)
+        const but_2 = wrapper.find('#gButtonText')
+        expect (but_2.text()).toBe('Guide')
+        
+    })
 }) 
