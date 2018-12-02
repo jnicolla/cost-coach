@@ -13,4 +13,5 @@ build site:
   script:
     - cd client
     - npm install --progress=false
+    - npm install nodemon@latest -D
     - npm run unit
