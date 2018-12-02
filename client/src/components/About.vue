@@ -7,9 +7,9 @@
               <v-layout>
                 <v-flex>
                   <div class="mx-4">
-                    <h3 class="display-3 pb-2 font-weight-thin">About</h3>
+                    <h3 id = "Title" class="display-3 pb-2 font-weight-thin">About</h3>
                     <p>
-                      <span class="subheading">This app was created by Mitchell Li, Abdulla Shahid, Ofir Golan, and Stefani Vukajlovic.
+                      <span id = "Main_Body" class="subheading">This app was created by Mitchell Li, Abdulla Shahid, Ofir Golan, and Stefani Vukajlovic.
                           They are a group of Duke University undergraduates majoring in Computer Science. 
                           Building this app was a project for the CS class Delivering Software (Compsci 408), Duke University.
                           The course instructors are Robert Duvall, Richard Lucic, and Ajay Patel.
