@@ -50,6 +50,10 @@ export default {
         {
           label: "Disclaimer",
           href: "/disclaimer"
+        },
+        {
+          label: "About",
+          href: "/about"
         }
       ]
     }
