@@ -20,6 +20,9 @@
                           Other members of the client team include Michala Ritz and Fred Friedman.
                       </span>
                     </p>
+                    <p>
+                      <span class="subheading">The questions in the conversation guide page are pulled from pathlighthealth.com, which belongs to our client.</span>
+                    </p>
                   </div>
                 </v-flex>
               </v-layout>
