@@ -70,7 +70,8 @@ export default {
         {q:"When is payment for appointments due?"},
         {q:"Are there ways to change my treatment schedule to work around my job or childcare?"},
         {q:"Can we regularly go over my list of medications to see if there are ways to lower my drug costs?"},
-        {q:"Are there programs that can help cover the costs of my drugs for cancer treatment or side effects?"}
+        {q:"Are there programs that can help cover the costs of my drugs for cancer treatment or side effects?"},
+        {q:"Will participating in a clinical trial cost me more than my usual care?"}
       ]
     }
   },
