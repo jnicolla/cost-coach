@@ -27,7 +27,7 @@ def script_calc(insurance, diagnosis, medications):
       fileToOpen_rel_path = 'csvfiles/Step-by-Step Changes in OOPM and Deductibles for Prostate Oral 150.csv'
    fileToOpen = getPath(fileToOpen_rel_path)
    
-  with open(fileToOpen) as csv_file:
+   with open(fileToOpen) as csv_file:
       csv_reader = csv.reader(csv_file, delimiter=',')
       line_count = 1
       
