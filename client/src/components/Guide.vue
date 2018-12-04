@@ -41,7 +41,7 @@
             <v-layout>
               <v-flex>
                 <v-card-actions class="mx-3">
-                  <v-btn id = "PDFG" @click="genPDF" color="success">Generate</v-btn>
+                  <v-btn id = "PDFG" @click="genPDF" color="success">Generate PDF</v-btn>
                 </v-card-actions>
               </v-flex>
             </v-layout>
@@ -64,7 +64,14 @@ export default {
         {q:"Is my current insurance plan right for me?", checked:false},
         {q:"What resources are available to help me with financial planning?", checked:false},
         {q:"What if I can't afford a particular visit/treatment?", checked:false},
-        {q:"Are my drugs covered by my insurance plan?", checked:false}
+        {q:"Are my drugs covered by my insurance plan?", checked:false},
+        {q:"Who can help me organize my expenses, keep track of incoming bills, and plan my budget?"},
+        {q:"If an insurance claim is denied, who can help me file an appeal?"},
+        {q:"When is payment for appointments due?"},
+        {q:"Are there ways to change my treatment schedule to work around my job or childcare?"},
+        {q:"Can we regularly go over my list of medications to see if there are ways to lower my drug costs?"},
+        {q:"Are there programs that can help cover the costs of my drugs for cancer treatment or side effects?"},
+        {q:"Will participating in a clinical trial cost me more than my usual care?"}
       ]
     }
   },
