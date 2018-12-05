@@ -41,7 +41,7 @@
             <v-layout>
               <v-flex>
                 <v-card-actions class="mx-3">
-                  <v-btn id = "PDFG" @click="genPDF" color="success">Generate PDF</v-btn>
+                  <v-btn id = "PDFG" @click="genPDF" color="success" large>Generate PDF</v-btn>
                 </v-card-actions>
               </v-flex>
             </v-layout>

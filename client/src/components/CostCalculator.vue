@@ -2,6 +2,21 @@
 <div>
   <v-content>
     <v-container fluid>
+
+      <v-fab-transition>
+        <v-btn
+          fab
+          absolute bottom right
+          v-show="showScrollFab"
+          class="mb-5"
+          color="#d65f36"
+          dark
+          @click="$vuetify.goTo(0, {duration: 300,offset: 0,easing: 'easeInOutCubic'})"
+        >
+        <v-icon dark>arrow_upward</v-icon>
+        </v-btn>
+      </v-fab-transition>
+
       <v-layout justify-center row fill-height class="mb-4">
         <v-flex xs11 md8 lg6>
           <v-card>
@@ -245,6 +260,10 @@ export default {
 
     helpDialogText() {
       return this.helpDialogDetails[this.stepNo-1];
+    },
+
+    showScrollFab() {
+      return this.stepNo==4;
     }
   },
 

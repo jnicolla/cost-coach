@@ -11,7 +11,7 @@
       fill-dot
     >
       <div class="py-3 grey--text text--darken-2">
-        <h5 v-if="index==events.length-1" class="subtitle green--text text--darken-2 mb-2">Out of pocket maximum reached</h5>
+        <h5 v-if="index==events.length-1" class="title green--text text--darken-2 mb-2">Out of pocket maximum reached</h5>
         <h5 class="headline mb-3">
           {{ index+1 }}. Visit type: <span class="font-weight-bold">{{ event.visit }}</span>
         </h5>
