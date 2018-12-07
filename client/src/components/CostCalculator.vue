@@ -224,7 +224,7 @@ export default {
 
       diagnoses: ["Prostate Cancer"],
 
-      medications: ["Oral","IV"],
+      medications: ["Oral","Intravenous (IV)"],
 
       input: {
         insurance: "",
