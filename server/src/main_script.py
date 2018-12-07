@@ -1,7 +1,8 @@
 import os
 import csv
 from Plinko_Model import insuranceFunc
-
+# If you wan to change the input files to obtain different output files, run the main_script.py
+# Make sure you change the file name (pathname) in the process_data to the one you want to be runing 
 def getPath(rel_path):
     script_path = os.path.abspath(__file__)
     script_dir = os.path.split(script_path)[0]
