@@ -41,6 +41,11 @@ export default {
     }
   },
 
+  /*
+   * Data from CostCalculator component is passed as prop "data"
+   * Before timeline is rendered, we push the data to "events"
+   * Vue dynamic rendering does the rest
+   */
   created() {
     for (var i=0; i<this.data.data.length; i++) {
       var info = this.data.data[i].split(",");

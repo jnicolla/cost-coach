@@ -250,10 +250,12 @@ export default {
   },
 
   computed: {
+    /* ensures all inputs are filled before submission */
     allInputs() {
       return this.input.insurance && this.input.diagnosis && this.input.medications.length;
     },
 
+    /* gives the appropriate label for the help dialog based on which step user is on */
     helpDialogLabel() {
       return this.steps[this.stepNo-1];
     },
@@ -262,6 +264,7 @@ export default {
       return this.helpDialogDetails[this.stepNo-1];
     },
 
+    /* show the scroll floating-action button if the user is on the timeline page*/
     showScrollFab() {
       return this.stepNo==4;
     }
@@ -275,6 +278,11 @@ export default {
         "https://costcoachserver.herokuapp.com/calculate":"http://localhost:5000/calculate";
       
       axios.post(path, this.input).then((res) => {
+        /*
+         * response (res) is binded to tlData
+         * tlData passed as prop to Timeline component
+         * loading set to false removes loading circle, indicating data has been received
+         */
         this.tlData = res.data;
         this.loading = false;
       }).catch((err) => {
