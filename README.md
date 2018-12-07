@@ -25,6 +25,3 @@ Update Check - 9/30/18
 <br/>
 Testing Plan has been implemented for one page's specific components so far, the Dislclaimer Page. Currently runs two tests that checks for button functionality and text display. Testing plan has been implemented for three pages total (Home, About, and Disclaimer Page), checks to make sure these pages appear/logically sound. 
 The testing for the server side has been added too. The flask framwork and script data processing has been tested.
-</br>
-
-<Rep Demo>
